@@ -1,4 +1,3 @@
-"use client";
 
 import Link from "next/link";
 import { Moon, Sparkles } from "lucide-react";
@@ -9,7 +8,7 @@ export default function Navbar() {
     <nav className="w-full border-b bg-white">
       <div className="mx-auto flex container items-center justify-between px-6 py-4">
         
-        {/* Logo */}
+      
         <Link href="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md">
             <Sparkles size={18} />
@@ -20,7 +19,7 @@ export default function Navbar() {
           </h1>
         </Link>
 
-        {/* Center Menu */}
+        
         <div className="hidden items-center gap-2 rounded-full  p-2 md:flex">
           <NavLinks
             href="/"
