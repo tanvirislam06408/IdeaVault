@@ -38,7 +38,6 @@ const WhyUs = () => {
     return (
         <section className="container mx-auto py-20 px-4">
             
-            {/* Header */}
             <div className="max-w-4xl mb-16">
                 <p className="text-blue-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
                     Why IdeaVault
@@ -53,7 +52,6 @@ const WhyUs = () => {
                 </p>
             </div>
 
-            {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
                 {features.map((feature, index) => (
                     <div
