@@ -9,6 +9,8 @@ const SocialLogin = () => {
         const data = await authClient.signIn.social({
             provider: "google",
         });
+        console.log(data);
+        
     };
 
     return <Button onClick={signIn} className="w-full rounded-xl my-5" variant="outline">
