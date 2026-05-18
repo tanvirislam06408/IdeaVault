@@ -21,8 +21,9 @@ const Stats = () => {
         },
     ];
     return (
-         <div className="container mx-auto mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4   rounded-3xl overflow-hidden bg-white shadow-sm">
+         <div className="container mx-auto mt-12 px-4 md:px-0">
+            <h1 className='text-2xl text-center my-3 font-bold'>Our Growing Community</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border  rounded-3xl overflow-hidden bg-white shadow-sm">
                 
                 {stats.map((stat, index) => (
                     <div

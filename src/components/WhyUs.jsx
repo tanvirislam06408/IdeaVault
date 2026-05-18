@@ -61,17 +61,14 @@ const WhyUs = () => {
                         className="border border-slate-200 rounded-3xl p-10 bg-white hover:shadow-xl transition-all duration-300"
                     >
                         
-                        {/* Icon */}
                         <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-500 flex items-center justify-center mb-8">
                             {feature.icon}
                         </div>
-
-                        {/* Title */}
+     
                         <h2 className="text-2xl font-bold text-slate-900 mb-5">
                             {feature.title}
                         </h2>
-
-                        {/* Description */}
+  
                         <p className="text-slate-500 text-lg leading-relaxed">
                             {feature.description}
                         </p>
