@@ -1,5 +1,5 @@
 'use client';
-import animationData from '../../../../public/lotties/register.json';
+import animationData from '../../../../public/lotties/login.json';
 import {
   Button,
   Description,
@@ -41,7 +41,7 @@ const LoginPage = () => {
         <div className='flex-1 md:max-w-[40%] max-w-[70%]'>
              <Lottie animationData={animationData}/>
         </div>
-      <div className="w-full flex-1 max-w-md bg-white border border-gray-200 rounded-2xl shadow-lg p-8">
+      <div className="w-full flex-1 max-w-md bg-white border shadow-blue-100 border-gray-200 rounded-2xl shadow-lg p-8">
 
         {/* Header */}
         <h1 className="text-2xl font-bold text-center text-gray-900">

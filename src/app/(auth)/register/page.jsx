@@ -39,15 +39,15 @@ const RegisterPage = () => {
             <div className='flex-1 md:max-w-[40%] max-w-[70%]'>
                 <Lottie animationData={animationData} />
             </div>
-            <div className="w-full flex-1 max-w-md bg-white border border-gray-200 rounded-2xl shadow-lg p-8">
+            <div className="w-full flex-1 max-w-md bg-white border border-gray-200 rounded-2xl shadow-lg shadow-blue-100 p-8">
 
                 {/* Header */}
                 <h1 className="text-2xl font-bold text-center text-gray-900">
-                    Welcome back
+                   Join IdeaVault
                 </h1>
 
                 <p className="text-center text-sm text-gray-500 mt-2 mb-6">
-                    Log in to continue building and sharing ideas.
+                  Share, refine, and discover startup ideas worth building.
                 </p>
 
                 {/* Form */}

@@ -1,11 +1,20 @@
+'use client'
+import { authClient } from '@/lib/auth.client';
 import { Button } from '@heroui/react';
-import {Icon} from "@iconify/react";
+import { Icon } from "@iconify/react";
 
 const SocialLogin = () => {
-    return <Button className="w-full rounded-xl mt-3" variant="tertiary">
+
+    const signIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    };
+
+    return <Button onClick={signIn} className="w-full rounded-xl my-5" variant="outline">
         <Icon icon="devicon:google" />
         Sign in with Google
-      </Button>
+    </Button>
 };
 
 export default SocialLogin;
