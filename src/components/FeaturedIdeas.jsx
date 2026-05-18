@@ -1,5 +1,6 @@
 import { getFeaturedIdeas } from '@/lib/data';
 import React from 'react';
+import FeaturedCard from './shared/FeaturedCard';
 
 const FeaturedIdeas = async() => {
     const ideas = await getFeaturedIdeas();
@@ -13,6 +14,14 @@ const FeaturedIdeas = async() => {
                 <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
                     Ideas the community is loving
                 </h1>
+
+
+                {/* cards */}
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+                    {
+                        ideas.map(idea=><FeaturedCard key={idea._id} idea={idea}/>)
+                    }
+                </div>
         </div>
     );
 };
