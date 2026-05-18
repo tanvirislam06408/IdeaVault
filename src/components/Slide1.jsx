@@ -23,9 +23,9 @@ const Slide1 = () => {
             <div className="relative z-10 flex items-center h-full">
                 <div className="max-w-7xl mx-auto px-6 text-white">
                     
-                    <span className="bg-white/10 flex items-center max-w-[200px] backdrop-blur-md border border-white/20 px-4 py-1 rounded-full text-sm font-medium">
+                    <p className="bg-white/10  flex items-center max-w-[200px] backdrop-blur-md border border-white/20 px-4 py-1 rounded-full text-sm font-medium">
                         <Sparkles/> Welcome to IdeaVault
-                    </span>
+                    </p>
 
                     <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mt-5 mb-5 max-w-3xl">
                         Turn Your Brilliant <br />

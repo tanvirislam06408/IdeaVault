@@ -33,12 +33,12 @@ export default function Navbar() {
             Ideas
           </NavLinks>
           <NavLinks
-            href="/add-idea"
+            href="/add-ideas"
           >
            Add Idea
           </NavLinks>
           <NavLinks
-            href="/my-idea"
+            href="/my-ideas"
           >
            My Ideas
           </NavLinks>
