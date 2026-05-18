@@ -1,19 +1,20 @@
 import { CircleDollar } from "@gravity-ui/icons";
-import { Avatar, Button, Card, Link } from "@heroui/react";
+import { Avatar, Button, Card } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { AiOutlineLike } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";
 const FeaturedCard = ({ idea }) => {
   return (
     <div className="">
-      <Card className="border h-full flex flex-col justify-between">
+      <Card className="border h-full flex flex-col justify-between ">
         <div>
           <div>
-            <Image src={idea?.image} width={500} height={300} alt={idea.project_title} className="rounded-2xl mb-3" />
+            <Image src={idea?.image} width={500} height={300} alt={idea.project_title} className="rounded-2xl mb-3 transition-all duration-500 hover:scale-103" />
           </div>
           <Card.Header>
-            <Card.Title className="text-lg font-semibold">{idea.project_title}</Card.Title>
+            <Card.Title className="text-lg font-semibold hover:gradient-text">{idea.project_title}</Card.Title>
             <Card.Description className="mt-3">
               {idea?.tagline}
             </Card.Description>
@@ -33,7 +34,9 @@ const FeaturedCard = ({ idea }) => {
               <FaRegComment />
             </div>
           </div>
-          <Button variant="outline" className={'w-full mt-auto'}>View Details</Button>
+          <Link href={`/ideas/${idea._id}`}  className={'w-full mt-auto'}>
+            <Button variant="outline" className={'w-full'}>View Details</Button>
+          </Link>
         </Card.Footer>
       </Card>
     </div>

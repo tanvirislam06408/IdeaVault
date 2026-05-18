@@ -62,7 +62,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/signup"
+            href="/register"
             className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:scale-102"
           >
             SignUP
