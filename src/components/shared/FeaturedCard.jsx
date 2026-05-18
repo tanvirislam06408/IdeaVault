@@ -1,27 +1,21 @@
 import {CircleDollar} from "@gravity-ui/icons";
-import {Card, Link} from "@heroui/react";
+import {Button, Card, Link} from "@heroui/react";
+import Image from "next/image";
 const FeaturedCard = ({idea}) => {
     return (
+        <div className="">
+             <Card className="border h-full flex flex-col">
         <div>
-             <Card className="">
-      <CircleDollar aria-label="Dollar sign icon" className="text-primary size-6" role="img" />
+          <Image src={idea?.image} width={500} height={300} alt={idea.project_title} className="rounded-2xl"/>
+        </div>
       <Card.Header>
-        <Card.Title>{idea.project_title}</Card.Title>
-        <Card.Description>
-          Visit the Acme Creator Hub to sign up today and start earning credits from your fans and
-          followers.
+        <Card.Title className="text-lg font-semibold">{idea.project_title}</Card.Title>
+        <Card.Description className="mt-3">
+          {idea?.tagline}
         </Card.Description>
       </Card.Header>
       <Card.Footer>
-        <Link
-          aria-label="Go to Acme Creator Hub (opens in new tab)"
-          href="https://heroui.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Creator Hub
-          <Link.Icon aria-hidden="true" />
-        </Link>
+        <Button variant="outline" className={'w-full mt-auto'}>View Details</Button>
       </Card.Footer>
     </Card>
         </div>
