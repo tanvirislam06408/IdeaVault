@@ -1,17 +1,33 @@
 'use client'
 
+import { authClient } from "@/lib/auth.client"
 import { Button } from "@heroui/react"
 import { Sparkles } from "lucide-react"
+import { redirect, useRouter } from "next/navigation"
+import { useEffect } from "react"
+import toast from "react-hot-toast"
 
 const AddIdea = () => {
+
+    const { data: session, isPending } = authClient.useSession();
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
         const formData = new FormData(e.target)
 
         const data = Object.fromEntries(formData.entries())
+
+        const userData = {
+            ...data,
+            author: {
+                name: session?.user?.name,
+                user_id: session?.user?.id,
+                posted_date: new Date(),
+                photo: session?.user?.image
+            }
+        }
+        console.log(userData);
 
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas`, {
@@ -19,9 +35,15 @@ const AddIdea = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(userData)
         })
         const resData = await res.json();
+        if(resData.acknowledged){
+            toast.success("Idea added successfully");
+            e.target.reset()
+            redirect('/my-ideas')
+        }
+        
     }
 
     return (

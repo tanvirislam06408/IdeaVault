@@ -11,3 +11,16 @@ export const getIdeas=async()=>{
     
     return data;
 }
+export const getUserIdeas=async(user_id)=>{
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/userIdea/${user_id}`);
+    const data=await res.json();
+    
+    return data;
+}
+
+export const getIdeaById=async(id)=>{
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/idea/${id}`);
+    const data=await res.json();
+    
+    return data;
+}

@@ -24,8 +24,8 @@ const FeaturedCard = ({ idea }) => {
           <div className="flex w-full px-3 justify-between ">
             <div className="flex items-center gap-2.5">
               <Avatar size="sm">
-                <Avatar.Image alt="John Doe" src={idea?.author?.photo} />
-                <Avatar.Fallback>JD</Avatar.Fallback>
+                <Avatar.Image alt={idea?.author?.name} src={idea?.author?.photo || 'https://imgs.search.brave.com/EWo_Dvd8o-GiTJ1r0q1weRL427wwuA49apSyjz4jPYI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMTEv/MjA5LzU2NS9zbWFs/bC91c2VyLXByb2Zp/bGUtYXZhdGFyLWZy/ZWUtdmVjdG9yLmpw/Zw'} />
+                <Avatar.Fallback>{idea?.author?.name?.slice(0,2).toUpperCase()}</Avatar.Fallback>
               </Avatar>
               <p>{idea?.author?.name}</p>
             </div>
