@@ -20,6 +20,7 @@ const AddIdea = () => {
 
         const userData = {
             ...data,
+            tags: [data.tags],
             author: {
                 name: session?.user?.name,
                 user_id: session?.user?.id,
@@ -38,12 +39,12 @@ const AddIdea = () => {
             body: JSON.stringify(userData)
         })
         const resData = await res.json();
-        if(resData.acknowledged){
+        if (resData.acknowledged) {
             toast.success("Idea added successfully");
             e.target.reset()
             redirect('/my-ideas')
         }
-        
+
     }
 
     return (

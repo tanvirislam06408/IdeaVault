@@ -28,21 +28,18 @@ const IdeaDetailsPage = () => {
     const [idea, setIdea] = useState([]);
     const [commentData, setCommentData] = useState([]);
     const { data: session } = authClient.useSession();
-    console.log(idea, commentData);
-
-    // const getIdea = useCallback(async () => {
-    //     const res = await getIdeaById(id)
-    //     setIdea(res)
-    // }, [id])
-
-    useEffect(()=>{
-        const getIdea=async(id)=>{
-            const res = await getIdeaById(id);
-            setIdea(res)
-            
-        }
-        getIdea(id)
-    },[id])
+    console.log(idea);
+    
+        
+        useEffect(()=>{
+            const getIdea=async(id)=>{
+                const res = await getIdeaById(id);
+                setIdea(res)
+                console.log(res);
+            }
+            getIdea(id)
+        },[id])
+        
    
 
     // get comments
@@ -93,6 +90,8 @@ const IdeaDetailsPage = () => {
         }
     }
 
+
+    // like count
     const handleLikeCount = async () => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas/${id}`, {
             method: 'PATCH',
@@ -104,7 +103,7 @@ const IdeaDetailsPage = () => {
 
         if (data.acknowledged) {
             toast.success('Idea liked successfully');
-            fetchIdea();
+            router.refresh();
         }
     }
 
