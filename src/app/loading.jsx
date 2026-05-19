@@ -5,6 +5,7 @@ const loading = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
             <Spinner size="lg" color="danger" />
+            <p className="text-gray-500">Loading...</p>
         </div>
     );
 };

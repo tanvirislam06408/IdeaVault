@@ -13,15 +13,25 @@ import {
     ThumbsUp,
     Users
 } from 'lucide-react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getIdeaById } from '@/lib/data'
+import { Button, Description, Form, Label, TextArea, TextField } from '@heroui/react'
+import { authClient } from '@/lib/auth.client'
+import toast from 'react-hot-toast'
+import CommentSection from '@/components/shared/CommentSection'
+import SideGuide from '@/components/shared/SideGuide'
 
 const IdeaDetailsPage = () => {
 
-
-    const [idea, setIdea] = useState([])
     const { id } = useParams();
+
+    const router=useRouter();
+    const [idea, setIdea] = useState([]);
+    const [commentData, setCommentData] = useState([]);
+
+
+
     useEffect(() => {
         const getidea = async () => {
             const res = await getIdeaById(id)
@@ -31,8 +41,69 @@ const IdeaDetailsPage = () => {
     }, [id])
 
 
+    // get the texarea value
+
+    const { data: session } = authClient.useSession();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const comment = formData.get("comment");
+
+        const commentDetails = {
+            email: session?.user?.email,
+            post_id: id,
+            comment,
+            comment_date: new Date().toISOString(),
+            name: session?.user?.name,
+            image: session?.user?.image,
+        }
+        if (comment.length == 0) {
+            toast.error("Comment cannot be empty");
+            return;
+        }
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/comments`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commentDetails),
+        })
+        const data = await res.json();
+        if (data.acknowledged) {
+            toast.success("Comment added successfully");
+            e.target.reset();
+        }
+    }
 
 
+    useEffect(() => {
+        const getCommentDetails = async (id) => {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/comments/${id}`);
+            const data = await res.json();
+            setCommentData(data)
+        }
+        getCommentDetails(id);
+    }, [id])
+
+  
+    const handleLikeCount=async()=>{
+        
+        const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas/${id}`,{
+            method:'PATCH',
+            headers:{
+                'Content-Type':'application/json'
+            },
+           
+        })
+        const data=await res.json();
+        if(data.acknowledged){
+            toast.success('Idea liked successfully');
+            router.refresh()
+        }
+        
+        
+    }
 
 
 
@@ -48,8 +119,8 @@ const IdeaDetailsPage = () => {
 
                             <div className="relative h-[320px] w-full">
                                 <Image
-                                    src={idea?.image}
-                                    alt={idea?.project_title}
+                                    src={idea?.image || "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"}
+                                    alt={idea?.project_title || "Project"}
                                     fill
                                     className="object-cover"
                                 />
@@ -82,10 +153,11 @@ const IdeaDetailsPage = () => {
 
                                 <div className="flex items-center gap-4">
                                     <Image
-                                        src={idea?.author?.photo}
-                                        alt={idea?.author?.name}
+                                        src={idea?.author?.photo || "https://i.pravatar.cc/150?img=12"}
+                                        alt={idea?.author?.name || "Author"}
                                         width={50}
                                         height={50}
+                                        sizes=''
                                         className="rounded-full object-cover ring-2 ring-orange-100"
                                     />
 
@@ -101,14 +173,14 @@ const IdeaDetailsPage = () => {
 
                                 <div className="flex items-center gap-3">
 
-                                    <button className="flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-medium text-white transition hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] gradient-button">
+                                    <button onClick={handleLikeCount} className="flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-medium text-white transition hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] gradient-button">
                                         <ThumbsUp size={16} />
                                         {idea?.engagement?.likes}
                                     </button>
 
                                     <button className="flex items-center gap-2 rounded-2xl border border-gray-200 bg-white px-5 py-3 text-sm font-medium text-gray-700 transition hover:bg-orange-50/50 hover:text-rose-500 hover:border-rose-200">
                                         <MessageSquare size={16} />
-                                        {idea?.engagement?.comments}
+                                        {commentData.length}
                                     </button>
                                 </div>
                             </div>
@@ -169,7 +241,7 @@ const IdeaDetailsPage = () => {
                                 </div>
 
                                 <p className="leading-8 text-gray-600">
-                                    {idea?.fullPitch}
+                                    {idea?.pitch_details?.the_full_pitch}
                                 </p>
                             </div>
 
@@ -186,7 +258,7 @@ const IdeaDetailsPage = () => {
                                 </div>
 
                                 <p className="leading-8 text-gray-600">
-                                    {idea?.problem}
+                                    {idea?.pitch_details?.the_problem}
                                 </p>
                             </div>
 
@@ -203,7 +275,7 @@ const IdeaDetailsPage = () => {
                                 </div>
 
                                 <p className="leading-8 text-gray-600">
-                                    {idea?.solution}
+                                    {idea?.pitch_details?.the_proposed_solution}
                                 </p>
                             </div>
                         </div>
@@ -222,109 +294,33 @@ const IdeaDetailsPage = () => {
                             </div>
 
 
-                            <div className="mb-6 flex gap-4">
+                            <Form onSubmit={handleSubmit} className="mb-6 flex gap-4 flex-col">
                                 <Image
-                                    src={idea?.author?.photo}
+                                    src={idea?.author?.photo || "https://i.pravatar.cc/150?img=12"}
                                     alt="user"
                                     width={45}
                                     height={45}
                                     className="h-11 w-11 rounded-full object-cover ring-2 ring-orange-100"
                                 />
+                                <TextField variant="secondary">
+                                    <Label>Comments</Label>
+                                    <TextArea aria-label='comment' name="comment" className="w-full rounded-2xl border border-gray-200 bg-gray-50 p-4 outline-none transition focus:border-rose-400 focus:bg-white focus:ring-0" placeholder="Tell us about idea..." rows={4} />
+                                    <Description>Share your thoughts about this idea...</Description>
+                                </TextField>
 
-                                <textarea
-                                    rows={4}
-                                    placeholder="Share your thoughts about this idea..."
-                                    className="w-full rounded-2xl border border-gray-200 bg-gray-50 p-4 outline-none transition focus:border-rose-400 focus:bg-white"
-                                />
-                            </div>
-
-                            <button className="flex items-center gap-2 rounded-2xl px-6 py-3 font-medium text-white transition hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] gradient-button">
-                                Post Comment
-                                <ArrowUpRight size={18} />
-                            </button>
+                                <Button type='submit' className="flex items-center gap-2 rounded-2xl px-6 py-3 font-medium text-white transition hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] gradient-button">
+                                    Post Comment
+                                    <ArrowUpRight size={18} />
+                                </Button>
+                            </Form>
                         </div>
                     </div>
 
 
-                    <div className="space-y-6">
-
-                        <div className="md:sticky top-6 rounded-3xl bg-[#0f172a] p-7 text-white shadow-xl border border-white/5">
-
-                            <p className="mb-2 text-sm text-rose-300 font-medium tracking-wide">
-                                Startup Potential
-                            </p>
-
-                            <h2 className="text-4xl font-extrabold gradient-text">
-                                92%
-                            </h2>
-
-                            <div className="mt-5 h-3 overflow-hidden rounded-full bg-white/10">
-                                <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-orange-500 to-rose-500" />
-                            </div>
-
-                            <p className="mt-5 text-sm leading-7 text-gray-300">
-                                This concept shows strong market fit, scalable potential,
-                                and recurring revenue opportunity in the remote productivity sector.
-                            </p>
-                        </div>
-
-
-                        <div className="rounded-3xl bg-white p-7 shadow-sm border border-gray-100/80">
-                            <h2 className="mb-5 text-xl font-bold gradient-text">
-                                Quick Insights
-                            </h2>
-
-                            <div className="space-y-4">
-
-                                <div className="rounded-2xl bg-gray-50/70 p-4 border border-gray-100/50">
-                                    <p className="text-sm text-gray-500">
-                                        Business Model
-                                    </p>
-
-                                    <h3 className="mt-1 font-semibold text-gray-800">
-                                        SaaS Subscription
-                                    </h3>
-                                </div>
-
-                                <div className="rounded-2xl bg-gray-50/70 p-4 border border-gray-100/50">
-                                    <p className="text-sm text-gray-500">
-                                        Monetization
-                                    </p>
-
-                                    <h3 className="mt-1 font-semibold text-gray-800">
-                                        Monthly + Enterprise Plans
-                                    </h3>
-                                </div>
-
-                                <div className="rounded-2xl bg-gray-50/70 p-4 border border-gray-100/50">
-                                    <p className="text-sm text-gray-500">
-                                        Market Trend
-                                    </p>
-
-                                    <h3 className="mt-1 font-semibold text-gray-800">
-                                        Growing Rapidly
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="rounded-3xl bg-gradient-to-br from-orange-500 via-rose-500 to-red-600 p-7 text-white shadow-xl">
-
-                            <p className="text-sm text-orange-100 font-medium">
-                                Interested in collaborating?
-                            </p>
-
-                            <h2 className="mt-2 text-2xl font-bold leading-snug">
-                                Connect with the creator and turn this idea into reality.
-                            </h2>
-
-                            <button className="mt-6 rounded-2xl bg-white px-6 py-3 font-semibold text-rose-600 transition hover:bg-orange-50 hover:scale-[1.02] active:scale-[0.98]">
-                                Contact Founder
-                            </button>
-                        </div>
-                    </div>
+                    <SideGuide />
                 </div>
+
+                <CommentSection commentData={commentData} />
             </div>
         </section>
     )

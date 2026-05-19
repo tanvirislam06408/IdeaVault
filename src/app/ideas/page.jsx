@@ -4,7 +4,6 @@ import React from 'react';
 
 const AllIdeaPage = async() => {
     const ideas=await getIdeas();
-    console.log(ideas);
     
     return (
         <div className='container mx-auto mt-5 px-5'>
