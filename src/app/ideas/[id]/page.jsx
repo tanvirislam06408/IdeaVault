@@ -43,15 +43,20 @@ const IdeaDetailsPage = () => {
         }
         getIdea(id)
     },[id])
+   
 
-    useEffect(() => {
-        const getComments = async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/comments/${id}`)
-            const data = await res.json()
-            setCommentData(data)
-        }
-        getComments(id)
-    }, [id])
+    // get comments
+
+        const getComments=useCallback(async()=>{
+            const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/comments/${id}`);
+            const data=await res.json();
+             setCommentData(data)
+        },[id])
+
+        useEffect(()=>{
+            getComments();
+        },[getComments])
+        
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -83,8 +88,7 @@ const IdeaDetailsPage = () => {
 
         if (data.acknowledged) {
             toast.success("Comment added successfully");
-            fetchComments();
-            fetchIdea();
+            getComments();
             e.target.reset();
         }
     }
@@ -281,7 +285,7 @@ const IdeaDetailsPage = () => {
                     <SideGuide />
                 </div>
 
-                {/* <CommentSection commentData={commentData} refetchComments={fetchComments} /> */}
+                <CommentSection commentData={commentData} refetchComments={getComments} />
             </div>
         </section>
     )
