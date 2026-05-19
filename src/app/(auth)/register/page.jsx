@@ -16,7 +16,7 @@ import Link from 'next/link';
 import { authClient } from '@/lib/auth.client';
 
 const RegisterPage = () => {
-    const [err,setErr]=useState('');
+    const [err, setErr] = useState('');
     const onSubmit = async (e) => {
         e.preventDefault();
         setErr('')
@@ -24,14 +24,14 @@ const RegisterPage = () => {
         const userData = Object.fromEntries(formData.entries());
 
         const { data, error } = await authClient.signUp.email({
-           ...userData,
+            ...userData,
             callbackURL: "/",
         });
-        console.log(data,error);
-        if(error){
+        console.log(data, error);
+        if (error) {
             setErr(error.message)
         }
-        
+
     };
 
     return (
@@ -39,15 +39,15 @@ const RegisterPage = () => {
             <div className='flex-1 md:max-w-[40%] max-w-[70%]'>
                 <Lottie animationData={animationData} />
             </div>
-            <div className="w-full flex-1 max-w-md bg-white border border-gray-200 rounded-2xl shadow-lg shadow-blue-100 p-8">
+            <div className="w-full flex-1 max-w-md bg-white border border-gray-200 rounded-2xl shadow-lg shadow-rose-100 p-8">
 
                 {/* Header */}
                 <h1 className="text-2xl font-bold text-center text-gray-900">
-                   Join IdeaVault
+                    Join IdeaVault
                 </h1>
 
                 <p className="text-center text-sm text-gray-500 mt-2 mb-6">
-                  Share, refine, and discover startup ideas worth building.
+                    Share, refine, and discover startup ideas worth building.
                 </p>
 
                 {/* Form */}
@@ -141,7 +141,7 @@ const RegisterPage = () => {
                         />
                         <FieldError className="text-red-500 text-xs mt-1" />
                     </TextField>
-                        <p className='text-red-500 text-sm'>{err}</p>
+                    <p className='text-red-500 text-sm'>{err}</p>
                     {/* Button */}
                     <Button
                         type="submit"
@@ -154,7 +154,7 @@ const RegisterPage = () => {
                     <div className='border border-r-gray-400 w-full '></div>
                 </div>
                 <SocialLogin />
-                <p className='text-center mt-3 text-muted'>Already a member ? <Link className='text-blue-500' href={'/login'}>Login</Link></p>
+                <p className='text-center mt-3 text-muted'>Already a member ? <Link className='text-rose-500' href={'/login'}>Login</Link></p>
             </div>
         </div>
     );

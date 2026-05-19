@@ -37,9 +37,9 @@ const features = [
 const WhyUs = () => {
     return (
         <section className="container mx-auto py-20 px-4">
-            
+
             <div className="max-w-4xl mb-16">
-                <p className="text-blue-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
+                <p className="text-rose-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
                     Why IdeaVault
                 </p>
 
@@ -58,15 +58,15 @@ const WhyUs = () => {
                         key={index}
                         className="border border-slate-200 rounded-3xl p-10 bg-white hover:shadow-xl transition-all duration-300"
                     >
-                        
-                        <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-500 flex items-center justify-center mb-8">
+
+                        <div className="w-16 h-16 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mb-8">
                             {feature.icon}
                         </div>
-     
+
                         <h2 className="text-2xl font-bold text-slate-900 mb-5">
                             {feature.title}
                         </h2>
-  
+
                         <p className="text-slate-500 text-lg leading-relaxed">
                             {feature.description}
                         </p>

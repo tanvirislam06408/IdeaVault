@@ -11,11 +11,11 @@ const Footer = () => {
             <div className="mx-auto grid container gap-12 px-6 py-14 md:grid-cols-4">
                 <div>
                     <Link href="/" className="mb-4 flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-sm">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-sm">
                             <Sparkles size={18} />
                         </div>
 
-                        <h2 className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-2xl font-bold text-transparent">
+                        <h2 className="bg-gradient-to-r from-orange-500 to-rose-500 bg-clip-text text-2xl font-bold text-transparent">
                             IdeaVault
                         </h2>
                     </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="/ideas"
-                                className="transition hover:text-blue-500"
+                                className="transition hover:text-rose-500"
                             >
                                 Browse Ideas
                             </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="/ideas?category=Tech"
-                                className="transition hover:text-blue-500"
+                                className="transition hover:text-rose-500"
                             >
                                 Tech
                             </Link>
@@ -52,7 +52,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="/ideas?category=AI"
-                                className="transition hover:text-blue-500"
+                                className="transition hover:text-rose-500"
                             >
                                 AI
                             </Link>
@@ -61,7 +61,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 href="/ideas?category=Health"
-                                className="transition hover:text-blue-500"
+                                className="transition hover:text-rose-500"
                             >
                                 Health
                             </Link>
@@ -92,21 +92,21 @@ const Footer = () => {
                     <div className="flex items-center gap-3">
                         <Link
                             href="https://twitter.com"
-                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-blue-500 hover:text-blue-500"
+                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-rose-500 hover:text-rose-500"
                         >
                             <BsTwitter size={16} />
                         </Link>
 
                         <Link
                             href="https://github.com"
-                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-blue-500 hover:text-blue-500"
+                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-rose-500 hover:text-rose-500"
                         >
                             <FaGithub size={16} />
                         </Link>
 
                         <Link
                             href="https://linkedin.com"
-                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-blue-500 hover:text-blue-500"
+                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-rose-500 hover:text-rose-500"
                         >
 
                             <FaLinkedin size={16} />

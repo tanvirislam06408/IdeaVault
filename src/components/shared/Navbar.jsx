@@ -7,10 +7,10 @@ export default function Navbar() {
   return (
     <nav className="w-full border-b bg-white">
       <div className="mx-auto flex container items-center justify-between px-6 py-4">
-        
-      
+
+
         <Link href="/" className="lg:flex flex items-center gap-3 md:hidden">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-md">
             <Sparkles size={18} />
           </div>
 
@@ -19,7 +19,7 @@ export default function Navbar() {
           </h1>
         </Link>
 
-        
+
         <div className="hidden items-center gap-2 rounded-full  p-2 md:flex">
           <NavLinks
             href="/"
@@ -35,12 +35,12 @@ export default function Navbar() {
           <NavLinks
             href="/add-ideas"
           >
-           Add Idea
+            Add Idea
           </NavLinks>
           <NavLinks
             href="/my-ideas"
           >
-           My Ideas
+            My Ideas
           </NavLinks>
           <NavLinks
             href="/interactions"
@@ -63,7 +63,7 @@ export default function Navbar() {
 
           <Link
             href="/register"
-            className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:scale-102"
+            className="rounded-xl bg-gradient-to-r from-orange-500 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:scale-102"
           >
             SignUP
           </Link>

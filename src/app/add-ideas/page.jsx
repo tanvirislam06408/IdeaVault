@@ -21,17 +21,17 @@ const AddIdea = () => {
             },
             body: JSON.stringify(data)
         })
-        const resData=await res.json();
+        const resData = await res.json();
     }
 
     return (
         <div className="container mx-auto mt-6 max-w-4xl px-4">
             <div className="mb-8">
                 <p className="flex items-center my-4 gap-2.5 gradient-text">
-                        <Sparkles color="blue"/> New Idea 
-                    </p>
+                    <Sparkles className="text-rose-500" /> New Idea
+                </p>
                 <h1 className="text-3xl font-bold">Drop your concept
-</h1>
+                </h1>
 
                 <p className="text-gray-500 mt-2">
                     Share your startup or project concept with the community.
@@ -54,7 +54,7 @@ const AddIdea = () => {
                         type="text"
                         required
                         placeholder="e.g. MindMesh — AI Study Buddy for ADHD Learners"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -70,7 +70,7 @@ const AddIdea = () => {
                         type="text"
                         required
                         placeholder="One sentence that hooks the reader."
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -86,7 +86,7 @@ const AddIdea = () => {
                         rows={5}
                         required
                         placeholder="Tell us the full story — context, mechanics, why now."
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -101,7 +101,7 @@ const AddIdea = () => {
                             id="category"
                             name="category"
                             required
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none bg-white transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none bg-white transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         >
                             <option value="">Select category</option>
                             <option value="AI">AI</option>
@@ -123,7 +123,7 @@ const AddIdea = () => {
                             name="tags"
                             type="text"
                             placeholder="AI, climate, marketplace"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
                 </div>
@@ -140,7 +140,7 @@ const AddIdea = () => {
                         type="url"
                         required
                         placeholder="https://..."
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -156,7 +156,7 @@ const AddIdea = () => {
                             name="budget"
                             type="text"
                             placeholder="$80k seed"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
 
@@ -171,7 +171,7 @@ const AddIdea = () => {
                             type="text"
                             required
                             placeholder="University students, remote teams..."
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
                 </div>
@@ -188,7 +188,7 @@ const AddIdea = () => {
                         rows={3}
                         required
                         placeholder="What's broken today?"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -204,7 +204,7 @@ const AddIdea = () => {
                         rows={3}
                         required
                         placeholder="How will you fix it?"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -212,7 +212,7 @@ const AddIdea = () => {
                 <div className="flex gap-3 pt-2">
                     <Button variant="outline"
                         type="submit"
-                        className="rounded-xl gradient-button py-6 text-white px-6 py-3 font-medium hover:bg-blue-700 transition"
+                        className="rounded-xl gradient-button py-6 text-white px-6 py-3 font-medium hover:bg-rose-600 transition"
                     >
                         Publish Idea
                     </Button>

@@ -9,13 +9,13 @@ const Slide2 = () => {
             <div className="w-full h-full bg-black/55 flex items-center">
 
                 <div className="max-w-7xl mx-auto px-6 text-white">
-                    <span className="bg-purple-600/30 border border-purple-400 px-4 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-rose-500/20 border border-rose-400 text-rose-100 px-4 py-1 rounded-full text-sm font-medium">
                         Community Driven Ideas
                     </span>
 
                     <h1 className="text-4xl md:text-6xl font-extrabold mt-5 mb-5 max-w-3xl leading-tight">
                         Share Your Startup Ideas <br />
-                       With <span className="gradient-text"> Creative Minds</span>
+                        With <span className="gradient-text"> Creative Minds</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-gray-200 max-w-2xl mb-8">

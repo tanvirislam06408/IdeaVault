@@ -16,7 +16,7 @@ import Link from 'next/link';
 import { authClient } from '@/lib/auth.client';
 
 const LoginPage = () => {
-    const [err,setErr]=useState()
+  const [err, setErr] = useState()
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,23 +25,23 @@ const LoginPage = () => {
 
 
     const { data, error } = await authClient.signIn.email({
-        ...userData
-})
+      ...userData
+    })
 
-    if(error){
-        setErr(error.message)
+    if (error) {
+      setErr(error.message)
     }
 
 
   };
-  
+
 
   return (
     <div className="flex flex-col md:flex-row gap-1.5 items-center justify-center min-h-[70vh] px-4 mt-16">
-        <div className='flex-1 md:max-w-[40%] max-w-[70%]'>
-             <Lottie animationData={animationData}/>
-        </div>
-      <div className="w-full flex-1 max-w-md bg-white border shadow-blue-100 border-gray-200 rounded-2xl shadow-lg p-8">
+      <div className='flex-1 md:max-w-[40%] max-w-[70%]'>
+        <Lottie animationData={animationData} />
+      </div>
+      <div className="w-full flex-1 max-w-md bg-white border shadow-rose-100 border-gray-200 rounded-2xl shadow-lg p-8">
 
         {/* Header */}
         <h1 className="text-2xl font-bold text-center text-gray-900">
@@ -109,13 +109,13 @@ const LoginPage = () => {
               className="w-full"
             />
 
-            <Description className="text-xs text-blue-500 cursor-pointer mt-1 hover:underline">
+            <Description className="text-xs text-rose-500 cursor-pointer mt-1 hover:underline">
               Forgot password?
             </Description>
 
             <FieldError className="text-red-500 text-xs mt-1" />
           </TextField>
-            <p className='text-red-500 text-sm'>{err}</p>
+          <p className='text-red-500 text-sm'>{err}</p>
           {/* Button */}
           <Button
             type="submit"
@@ -124,11 +124,11 @@ const LoginPage = () => {
             Login
           </Button>
         </form>
-        <div className=' mt-4 text-center flex items-center gap-1.5 '><div className='border border-r-gray-400 w-full'></div> <p>OR</p> 
-        <div className='border border-r-gray-400 w-full '></div>
+        <div className=' mt-4 text-center flex items-center gap-1.5 '><div className='border border-r-gray-400 w-full'></div> <p>OR</p>
+          <div className='border border-r-gray-400 w-full '></div>
         </div>
-        <SocialLogin/>
-        <p className='text-center mt-3 text-muted'>New here ? <Link className='text-blue-500' href={'/register'}>Create a account</Link></p>
+        <SocialLogin />
+        <p className='text-center mt-3 text-muted'>New here ? <Link className='text-rose-500' href={'/register'}>Create a account</Link></p>
       </div>
     </div>
   );

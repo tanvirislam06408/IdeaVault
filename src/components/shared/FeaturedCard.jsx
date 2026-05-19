@@ -11,7 +11,7 @@ const FeaturedCard = ({ idea }) => {
       <Card className="border h-full flex flex-col justify-between ">
         <div>
           <div>
-            <Image src={idea?.image} width={500} height={300} alt={idea.project_title} className="rounded-2xl mb-3 transition-all duration-500 hover:scale-103" />
+            <Image src={idea?.image} width={500} height={300} alt={idea.project_title} className="rounded-2xl mb-3 transition-all duration-500 hover:scale-103 w-full h-[250px]" />
           </div>
           <Card.Header>
             <Card.Title className="text-lg font-semibold hover:gradient-text">{idea.project_title}</Card.Title>

@@ -1,9 +1,14 @@
+import FeaturedCard from '@/components/shared/FeaturedCard';
+import { getIdeas } from '@/lib/data';
 import React from 'react';
 
-const AllIdeaPage = () => {
+const AllIdeaPage = async() => {
+    const ideas=await getIdeas();
+    console.log(ideas);
+    
     return (
-        <div className='container mx-auto mt-5'>
-            <p className="text-blue-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
+        <div className='container mx-auto mt-5 px-5'>
+            <p className="text-rose-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
                 Explore
             </p>
 
@@ -12,9 +17,11 @@ const AllIdeaPage = () => {
             </h1>
             <p className='text-muted text-xl '>Search, filter, and find the spark you've been looking for.</p>
             {/* cards */}
-            <p className='text-muted'>Showing <span>10</span> ideas</p>
-            <div>
-
+            <p className='text-muted text-sm mt-3'>Showing <span className='font-bold text-black'>{ideas.length}</span> ideas</p>
+            <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                 {
+                    ideas.map(idea=> <FeaturedCard key={idea._id} idea={idea} />)
+                 }
             </div>
         </div>
     );
