@@ -2,6 +2,7 @@
 import Image from "next/image"
 import { Pencil, Trash2 } from "lucide-react"
 import { useEffect, useState } from "react";
+import DeleteComment from "./DeleteComment";
 
 const CommentSection = ({commentData:data}) => {
 
@@ -61,9 +62,7 @@ const CommentSection = ({commentData:data}) => {
                             <Pencil size={18} className="text-gray-600" />
                         </button>
 
-                        <button aria-label="Delete comment" className="rounded-xl p-2 transition hover:bg-red-50">
-                            <Trash2 size={18} className="text-red-500" />
-                        </button>
+                        <DeleteComment id={comment._id} comment={comment.comment}/>
                     </div>
                 </div>
             ))}

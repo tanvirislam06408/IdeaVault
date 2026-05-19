@@ -72,6 +72,7 @@ const IdeaDetailsPage = () => {
         const data = await res.json();
         if (data.acknowledged) {
             toast.success("Comment added successfully");
+            router.refresh();
             e.target.reset();
         }
     }
@@ -86,7 +87,7 @@ const IdeaDetailsPage = () => {
         getCommentDetails(id);
     }, [id])
 
-  
+//   count likes
     const handleLikeCount=async()=>{
         
         const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas/${id}`,{
