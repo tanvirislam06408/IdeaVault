@@ -27,7 +27,7 @@ const MyIdeasPage = () => {
 
     return (
         <div className="mx-auto container mt-10">
-            <h1 className="font-bold text-2xl mb-3">Ideas you&apos;ve shared</h1>
+            <h1 className="font-bold text-2xl mb-3">Ideas you have shared</h1>
             <div>
                 {
                     postsDAta.length === 0 ? (

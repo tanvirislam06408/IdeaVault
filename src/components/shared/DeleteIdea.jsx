@@ -1,21 +1,18 @@
-
-
 import { deleteComment } from "@/lib/data"
-import { AlertDialog, Button } from "@heroui/react"
-import { Trash2 } from "lucide-react"
-import toast from "react-hot-toast"
 
-const DeleteComment = ({ comment, id, refetchComments }) => {
+import { AlertDialog, Button } from "@heroui/react";
+import { Trash2 } from "lucide-react";
+import toast from "react-hot-toast";
+const DeleteIdea = () => {
+    
+
     const handleDelete = async () => {
-        const res = await deleteComment(id)
+        const res = await deleteComment(id);
         if (res.deletedCount > 0) {
-            toast.success("Comment deleted successfully")
-            if (refetchComments) {
-                refetchComments()
-            }
+            toast.success("Comment deleted successfully");
+            router.refresh();
         }
     }
-
     return (
         <AlertDialog>
             <Button variant="outline" aria-label="Delete comment" className="rounded-xl p-2 transition hover:bg-red-50">
@@ -46,7 +43,6 @@ const DeleteComment = ({ comment, id, refetchComments }) => {
                 </AlertDialog.Container>
             </AlertDialog.Backdrop>
         </AlertDialog>
-    )
-}
-
-export default DeleteComment
+    );
+};
+export default DeleteIdea;

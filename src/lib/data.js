@@ -1,3 +1,4 @@
+'use server'
 export const getFeaturedIdeas=async()=>{
     const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/featured-ideas`);
     const data=await res.json();
@@ -19,8 +20,9 @@ export const getUserIdeas=async(user_id)=>{
 }
 
 export const getIdeaById=async(id)=>{
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/idea/${id}`);
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas/${id}`);
     const data=await res.json();
+    console.log(data);
     
     return data;
 }
