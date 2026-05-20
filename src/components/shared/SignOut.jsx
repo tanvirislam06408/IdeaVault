@@ -15,7 +15,7 @@ const SignOut = () => {
         route.refresh();
       }
     }
-    return <Button variant="outline" onClick={handleLogout}>Logout</Button>
+    return <Button variant="ghost" onClick={handleLogout}>Logout</Button>
 };
 
 export default SignOut;

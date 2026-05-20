@@ -7,6 +7,7 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import SignOut from "./SignOut";
 import SideNav from "./SideNav";
+import { ProfileDropdown } from "./ProfileDropdown";
 
 export default async function Navbar() {
 
@@ -81,7 +82,9 @@ export default async function Navbar() {
            <Button variant='outline' className={'gradient-button py-4'}>Sign Up</Button>
           </Link></>)
           :
-          (<SignOut/>)  }
+          ( <div className="flex gap-2.5">
+            <ProfileDropdown/>
+          </div>)  }
         </div>
       </div>
     </nav>
