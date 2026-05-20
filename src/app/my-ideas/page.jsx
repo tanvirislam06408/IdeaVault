@@ -1,28 +1,45 @@
-'use client'
 
 import FeaturedCard from "@/components/shared/FeaturedCard";
 import UserIdea from "@/components/shared/UserIdea";
+import { auth } from "@/lib/auth";
 import { authClient } from "@/lib/auth.client"
 import { getUserIdeas } from "@/lib/data";
 import { Lightbulb } from "lucide-react";
+import { headers } from "next/headers";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-const MyIdeasPage = () => {
-    const { data: session } = authClient.useSession();
+const MyIdeasPage = async() => {
+    // const { data: session } = authClient.useSession();
+    const session=await auth.api.getSession({
+        headers: await headers()
+    })
+    const id=session?.user?.id
+    
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/userIdea/${id}`);
+    const postsDAta=await res.json();
+    
+    // const [postsDAta, setPostData] = useState([]);
+
+    // const fetPostData=useCallback(async(id)=>{
+    //      const posts = await getUserIdeas(id);
+    //         setPostData(posts || [])
+    // },[])
+
+    // useEffect(() => {
+    //     if (!session) return
+    //     if (!session?.user) return
+    //     const postedIdea = async () => {
+    //         const posts = await getUserIdeas(session?.user?.id);
+    //         setPostData(posts || [])
+    //     }
+    //     postedIdea()
+    // }, [session])\
 
 
-    const [postsDAta, setPostData] = useState([]);
-    useEffect(() => {
-        if (!session) return
-        if (!session?.user) return
-        const postedIdea = async () => {
-            const posts = await getUserIdeas(session?.user?.id);
-            setPostData(posts || [])
-        }
-        postedIdea()
-    }, [session])
-    console.log(postsDAta, session?.user?.id);
+    // useEffect(()=>{
+    //     fetPostData();
+    // },[fetPostData])
+    // console.log(postsDAta);
 
 
     return (

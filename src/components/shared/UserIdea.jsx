@@ -6,6 +6,8 @@ import { AiOutlineLike } from "react-icons/ai";
 import { FaRegComment, FaRegEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 import UpdateComment from "./UpdateComment";
+import DeleteIdea from "./DeleteIdea";
+import UpdatePost from "./UpdatePost";
 const UserIdea = ({ idea }) => {
     return (
         <div className="">
@@ -36,12 +38,12 @@ const UserIdea = ({ idea }) => {
                         </div>
                     </div>
                     <div className="flex justify-between w-full gap-4">
-                        <Link href={`/ideas/${idea._id}`} className={'w-full  mt-auto'}>
+                        <div className={'w-full  mt-auto'}>
                           
-                            <Button variant="outline" className={'w-full flex items-center gap-3'}>  Update<FaRegEdit /> </Button>
-                            <UpdateComment/>
-                        </Link>
-                        <Button variant="danger-soft" className={'w-full'}>Delete <MdDeleteOutline /></Button>
+                            
+                            <UpdatePost idea={idea}/>
+                        </div>
+                        <DeleteIdea idea={idea}/>
                     </div>
                 </Card.Footer>
             </Card>
