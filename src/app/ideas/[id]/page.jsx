@@ -29,31 +29,31 @@ const IdeaDetailsPage = () => {
     const [commentData, setCommentData] = useState([]);
     const { data: session } = authClient.useSession();
     console.log(idea);
-    
-        
-        useEffect(()=>{
-            const getIdea=async(id)=>{
-                const res = await getIdeaById(id);
-                setIdea(res)
-                console.log(res);
-            }
-            getIdea(id)
-        },[id])
-        
-   
+
+
+    useEffect(() => {
+        const getIdea = async (id) => {
+            const res = await getIdeaById(id);
+            setIdea(res)
+            console.log(res);
+        }
+        getIdea(id)
+    }, [id])
+
+
 
     // get comments
 
-        const getComments=useCallback(async()=>{
-            const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/comments/${id}`);
-            const data=await res.json();
-             setCommentData(data)
-        },[id])
+    const getComments = useCallback(async () => {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/comments/${id}`);
+        const data = await res.json();
+        setCommentData(data)
+    }, [id])
 
-        useEffect(()=>{
-            getComments();
-        },[getComments])
-        
+    useEffect(() => {
+        getComments();
+    }, [getComments])
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -67,6 +67,7 @@ const IdeaDetailsPage = () => {
 
         const commentDetails = {
             email: session?.user?.email,
+            posted_by: session?.user?.id,
             post_id: id,
             comment,
             comment_date: new Date().toISOString(),
@@ -93,7 +94,7 @@ const IdeaDetailsPage = () => {
 
     // like count
     const handleLikeCount = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas-like/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

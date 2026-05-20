@@ -10,7 +10,7 @@ import toast from "react-hot-toast"
 const AddIdea = () => {
 
     const { data: session, isPending } = authClient.useSession();
-
+    const router=useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -64,11 +64,13 @@ const AddIdea = () => {
         if (resData.acknowledged) {
             toast.success("Idea added successfully");
             e.target.reset()
-            
-        }
+            router.push('/my-ideas')
 
     }
-
+    else{
+        toast.error("Failed to add idea")
+    }
+}
     return (
         <div className="container mx-auto mt-6 max-w-4xl px-4">
             <div className="mb-8">

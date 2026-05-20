@@ -10,7 +10,7 @@ const Slide1 = () => {
             <div className="absolute inset-0">
                 <Image
                     loading="eager"
-                    src="https://images.unsplash.com/photo-1503551723145-6c040742065b-v2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     width={500}
                     height={500}
                     alt="Idea Collaboration"

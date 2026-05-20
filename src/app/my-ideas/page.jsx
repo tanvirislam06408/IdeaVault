@@ -18,32 +18,10 @@ const MyIdeasPage = async() => {
     const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/userIdea/${id}`);
     const postsDAta=await res.json();
     
-    // const [postsDAta, setPostData] = useState([]);
-
-    // const fetPostData=useCallback(async(id)=>{
-    //      const posts = await getUserIdeas(id);
-    //         setPostData(posts || [])
-    // },[])
-
-    // useEffect(() => {
-    //     if (!session) return
-    //     if (!session?.user) return
-    //     const postedIdea = async () => {
-    //         const posts = await getUserIdeas(session?.user?.id);
-    //         setPostData(posts || [])
-    //     }
-    //     postedIdea()
-    // }, [session])\
-
-
-    // useEffect(()=>{
-    //     fetPostData();
-    // },[fetPostData])
-    // console.log(postsDAta);
 
 
     return (
-        <div className="mx-auto container mt-10">
+        <div className="mx-auto container mt-10 px-5">
             <h1 className="font-bold text-2xl mb-3">Ideas you have shared</h1>
             <div>
                 {
