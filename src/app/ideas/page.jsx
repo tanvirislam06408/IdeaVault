@@ -1,11 +1,19 @@
-import FeaturedCard from '@/components/shared/FeaturedCard';
+
 import SearchFilter from '@/components/shared/SearchFilter';
 import { getIdeas } from '@/lib/data';
 import React from 'react';
 
-const AllIdeaPage = async() => {
-    const ideas=await getIdeas();
-    
+const AllIdeaPage = async ({ searchParams }) => {
+    const ideas = await getIdeas();
+    const sParams =await searchParams;
+
+    const searchIdeas = async (search, sort, category) => {
+        'use server'
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/searchIdea?search=${search}&sort=${sort}&category=${category}`);
+        const data = await res.json();
+
+        return data;
+    }
     return (
         <div className='container mx-auto mt-5 px-5'>
             <p className="text-rose-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
@@ -16,14 +24,7 @@ const AllIdeaPage = async() => {
                 All ideas in the vault
             </h1>
             <p className='text-muted text-xl '>Search, filter, and find the spark you've been looking for.</p>
-            <SearchFilter/>
-            {/* cards */}
-            <p className='text-muted text-sm mt-3'>Showing <span className='font-bold text-black'>{ideas.length}</span> ideas</p>
-            <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-                 {
-                    ideas.map(idea=> <FeaturedCard key={idea._id} idea={idea} />)
-                 }
-            </div>
+            <SearchFilter searchIdeas={searchIdeas} ideas={ideas} />
         </div>
     );
 };
