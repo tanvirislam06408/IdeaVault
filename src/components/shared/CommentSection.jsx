@@ -1,6 +1,7 @@
 import { Pencil } from "lucide-react"
 import DeleteComment from "./DeleteComment"
 import Image from "next/image"
+import UpdateComment from "./UpdateComment"
 
 const CommentSection = ({ commentData: data, refetchComments }) => {
     if (!data || data.length === 0) {
@@ -39,9 +40,7 @@ const CommentSection = ({ commentData: data, refetchComments }) => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <button aria-label="Edit comment" className="rounded-xl p-2 transition hover:bg-gray-100">
-                            <Pencil size={18} className="text-gray-600" />
-                        </button>
+                        <UpdateComment comment={comment} refetchComments={refetchComments}/>
                         <DeleteComment 
                             id={comment._id} 
                             comment={comment.comment} 

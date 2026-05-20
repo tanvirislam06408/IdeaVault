@@ -3,6 +3,7 @@ import { deleteComment } from "@/lib/data"
 import { AlertDialog, Button } from "@heroui/react";
 import { Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
+import { MdDeleteOutline } from "react-icons/md";
 const DeleteIdea = () => {
     
 
@@ -15,9 +16,7 @@ const DeleteIdea = () => {
     }
     return (
         <AlertDialog>
-            <Button variant="outline" aria-label="Delete comment" className="rounded-xl p-2 transition hover:bg-red-50">
-                <Trash2 size={18} className="text-red-500" />
-            </Button>
+            <Button variant="danger-soft" className={'w-full'}>Delete <MdDeleteOutline /></Button>
             <AlertDialog.Backdrop>
                 <AlertDialog.Container>
                     <AlertDialog.Dialog className="sm:max-w-[400px]">

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AiOutlineLike } from "react-icons/ai";
 import { FaRegComment, FaRegEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
+import UpdateComment from "./UpdateComment";
 const UserIdea = ({ idea }) => {
     return (
         <div className="">
@@ -38,6 +39,7 @@ const UserIdea = ({ idea }) => {
                         <Link href={`/ideas/${idea._id}`} className={'w-full  mt-auto'}>
                           
                             <Button variant="outline" className={'w-full flex items-center gap-3'}>  Update<FaRegEdit /> </Button>
+                            <UpdateComment/>
                         </Link>
                         <Button variant="danger-soft" className={'w-full'}>Delete <MdDeleteOutline /></Button>
                     </div>

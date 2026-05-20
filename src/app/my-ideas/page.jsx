@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 
 const MyIdeasPage = () => {
     const { data: session } = authClient.useSession();
-    const { data } = getUserIdeas(session?.user.id);
+
+
     const [postsDAta, setPostData] = useState([]);
     useEffect(() => {
         if (!session) return
@@ -22,7 +23,6 @@ const MyIdeasPage = () => {
         postedIdea()
     }, [session])
     console.log(postsDAta, session?.user?.id);
-    console.log(postsDAta);
 
 
     return (

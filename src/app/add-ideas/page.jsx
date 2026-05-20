@@ -19,16 +19,38 @@ const AddIdea = () => {
         const data = Object.fromEntries(formData.entries())
 
         const userData = {
-            ...data,
-            tags: [data.tags],
+            project_title: data.project_title,
+            image: data.image,
+            tagline: data.tagline,
+
             author: {
                 name: session?.user?.name,
                 user_id: session?.user?.id,
                 posted_date: new Date(),
                 photo: session?.user?.image
+            },
+
+            tags: data.tags
+                ? data.tags.split(',').map(tag => tag.trim())
+                : [],
+
+            engagement: {
+                likes: 0,
+                comments_count: 0
+            },
+
+            metadata: {
+                category: data.category,
+                target: data.target,
+                budget: data.budget
+            },
+
+            pitch_details: {
+                the_full_pitch: data.the_full_pitch,
+                the_problem: data.the_problem,
+                the_proposed_solution: data.the_proposed_solution
             }
         }
-        console.log(userData);
 
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas`, {
@@ -42,7 +64,7 @@ const AddIdea = () => {
         if (resData.acknowledged) {
             toast.success("Idea added successfully");
             e.target.reset()
-            redirect('/my-ideas')
+            
         }
 
     }
