@@ -44,7 +44,7 @@ const Slide1 = () => {
                             </Button>
                         </Link>
 
-                        <Link href="/addIdea">
+                        <Link href="/add-ideas">
                             <Button
                                 variant="ghost"
                                 className="border-white text-white hover:bg-white hover:text-black transition"

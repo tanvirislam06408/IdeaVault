@@ -1,4 +1,5 @@
 import FeaturedCard from '@/components/shared/FeaturedCard';
+import SearchFilter from '@/components/shared/SearchFilter';
 import { getIdeas } from '@/lib/data';
 import React from 'react';
 
@@ -15,6 +16,7 @@ const AllIdeaPage = async() => {
                 All ideas in the vault
             </h1>
             <p className='text-muted text-xl '>Search, filter, and find the spark you've been looking for.</p>
+            <SearchFilter/>
             {/* cards */}
             <p className='text-muted text-sm mt-3'>Showing <span className='font-bold text-black'>{ideas.length}</span> ideas</p>
             <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

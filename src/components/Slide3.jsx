@@ -30,7 +30,7 @@ const Slide3 = () => {
                             </Button>
                         </Link>
 
-                        <Link href="/myIdeas">
+                        <Link href="/add-ideas">
                             <Button
                                 variant="bordered"
                                 className="border-white text-white hover:bg-white hover:text-black"

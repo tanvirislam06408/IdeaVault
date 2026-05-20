@@ -7,11 +7,9 @@ const FeaturedIdeas = async () => {
 
     return (
         <div className='container mx-auto mt-20 px-5'>
-            <p className="text-rose-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
-                Trending
-            </p>
+            
 
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
                 Ideas the community is loving
             </h1>
 
