@@ -145,7 +145,7 @@ const IdeaDetailsPage = () => {
                             <div className="flex flex-wrap items-center justify-between gap-4 p-6">
                                 <div className="flex items-center gap-4">
                                     <Image
-                                        src={idea?.author?.photo || "https://i.pravatar.cc/150?img=12"}
+                                        src={idea?.author?.photo || "https://imgs.search.brave.com/vrV0ybuqxU18EPrdiMFBwHa_mVS6j_m3R1f5w4-eVpE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjcv/MDUxLzA5My9zbWFs/bC9nYW1lci1hdmF0/YXItM2QtaWxsdXN0/cmF0aW9uLXBuZy5w/bmc"}
                                         alt={idea?.author?.name || "Author"}
                                         width={50}
                                         height={50}
@@ -262,7 +262,7 @@ const IdeaDetailsPage = () => {
 
                             <Form onSubmit={handleSubmit} className="mb-6 flex gap-4 flex-col">
                                 <Image
-                                    src={session?.user?.image || "https://i.pravatar.cc/150?img=12"}
+                                    src={session?.user?.image || "https://imgs.search.brave.com/vrV0ybuqxU18EPrdiMFBwHa_mVS6j_m3R1f5w4-eVpE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjcv/MDUxLzA5My9zbWFs/bC9nYW1lci1hdmF0/YXItM2QtaWxsdXN0/cmF0aW9uLXBuZy5w/bmc"}
                                     alt="user"
                                     width={45}
                                     height={45}

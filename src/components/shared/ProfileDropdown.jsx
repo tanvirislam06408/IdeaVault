@@ -20,7 +20,7 @@ export async function ProfileDropdown() {
                         alt="Junior Garcia"
                         src={session?.user?.image}
                     />
-                    <Avatar.Fallback delayMs={600}>JD</Avatar.Fallback>
+                    <Avatar.Fallback delayMs={600}>{session?.user.name.slice(0, 2).toUpperCase()}</Avatar.Fallback>
                 </Avatar>
             </Dropdown.Trigger>
             <Dropdown.Popover>

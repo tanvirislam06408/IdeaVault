@@ -77,10 +77,10 @@ const Footer = () => {
                     <div className="space-y-4 text-sm text-gray-500">
                         <p className="flex items-center gap-2">
                             <Mail size={16} />
-                            hello@ideavault.app
+                            mstanvirislam05@gmail.com
                         </p>
 
-                        <p>San Francisco · Remote-first</p>
+                        <p>Dhaka · Remote-first</p>
                     </div>
                 </div>
 

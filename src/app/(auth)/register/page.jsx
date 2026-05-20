@@ -14,6 +14,7 @@ import SocialLogin from '@/components/shared/SocialLogin';
 import Lottie from 'lottie-react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth.client';
+import toast from 'react-hot-toast';
 
 const RegisterPage = () => {
     const [err, setErr] = useState('');
@@ -27,7 +28,9 @@ const RegisterPage = () => {
             ...userData,
             callbackURL: "/",
         });
-        console.log(data, error);
+        if(data?.user){
+            toast.success("Register successful !")
+        }
         if (error) {
             setErr(error.message)
         }
@@ -117,10 +120,10 @@ const RegisterPage = () => {
                         isRequired
                         name="password"
                         type="password"
-                        minLength={6}
+                        minLength={8}
                         validate={(value) => {
-                            if (value.length < 6) {
-                                return 'Password must be at least 6 characters';
+                            if (value.length < 8) {
+                                return 'Password must be at least 8 characters';
                             }
                             if (!/[A-Z]/.test(value)) {
                                 return 'Must include at least one uppercase letter';
@@ -147,7 +150,7 @@ const RegisterPage = () => {
                         type="submit"
                         className="w-full py-3 mt-2 rounded-lg font-medium gradient-button transition"
                     >
-                        Login
+                        SignUp
                     </Button>
                 </form>
                 <div className=' mt-4 text-center flex items-center gap-1.5 '><div className='border border-r-gray-400 w-full'></div> <p>OR</p>

@@ -14,9 +14,12 @@ import SocialLogin from '@/components/shared/SocialLogin';
 import Lottie from 'lottie-react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth.client';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
   const [err, setErr] = useState()
+  const router=useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -27,9 +30,14 @@ const LoginPage = () => {
     const { data, error } = await authClient.signIn.email({
       ...userData
     })
-
+    if(data?.user){
+      toast.success('login successful');
+      router.push('/')
+    }
+  
     if (error) {
       setErr(error.message)
+      toast.error('login failed')
     }
 
 
