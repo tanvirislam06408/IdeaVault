@@ -259,7 +259,7 @@ const AddIdea = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-3 pt-2">
+                <div className="flex justify-end gap-3 pt-2">
                     <Button variant="outline"
                         type="submit"
                         className="rounded-xl gradient-button py-6 text-white px-6 py-3 font-medium hover:bg-rose-600 transition"
@@ -267,12 +267,6 @@ const AddIdea = () => {
                         Publish Idea
                     </Button>
 
-                    <button
-                        type="button"
-                        className="rounded-xl border border-gray-300 px-6 py-3 font-medium hover:bg-gray-100 transition"
-                    >
-                        Cancel
-                    </button>
                 </div>
             </form>
         </div>

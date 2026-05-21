@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Idea vault",
+  title: "Idea vault - share your ideas",
   description: "Idea vault",
 };
 
@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+     
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
