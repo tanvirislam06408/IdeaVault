@@ -23,39 +23,39 @@ const SideGuide = () => {
                         </div>
 
 
-                        <div className="rounded-3xl bg-white p-7 shadow-sm border border-gray-100/80">
+                        <div className="rounded-3xl bg-white dark:bg-slate-900 p-7 shadow-sm border border-gray-100/80 dark:border-gray-800">
                             <h2 className="mb-5 text-xl font-bold gradient-text">
                                 Quick Insights
                             </h2>
 
                             <div className="space-y-4">
 
-                                <div className="rounded-2xl bg-gray-50/70 p-4 border border-gray-100/50">
-                                    <p className="text-sm text-gray-500">
+                                <div className="rounded-2xl bg-gray-50/70 dark:bg-slate-800/50 p-4 border border-gray-100/50 dark:border-gray-700/50">
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">
                                         Business Model
                                     </p>
 
-                                    <h3 className="mt-1 font-semibold text-gray-800">
+                                    <h3 className="mt-1 font-semibold text-gray-800 dark:text-gray-200">
                                         SaaS Subscription
                                     </h3>
                                 </div>
 
-                                <div className="rounded-2xl bg-gray-50/70 p-4 border border-gray-100/50">
-                                    <p className="text-sm text-gray-500">
+                                <div className="rounded-2xl bg-gray-50/70 dark:bg-slate-800/50 p-4 border border-gray-100/50 dark:border-gray-700/50">
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">
                                         Monetization
                                     </p>
 
-                                    <h3 className="mt-1 font-semibold text-gray-800">
+                                    <h3 className="mt-1 font-semibold text-gray-800 dark:text-gray-200">
                                         Monthly + Enterprise Plans
                                     </h3>
                                 </div>
 
-                                <div className="rounded-2xl bg-gray-50/70 p-4 border border-gray-100/50">
-                                    <p className="text-sm text-gray-500">
+                                <div className="rounded-2xl bg-gray-50/70 dark:bg-slate-800/50 p-4 border border-gray-100/50 dark:border-gray-700/50">
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">
                                         Market Trend
                                     </p>
 
-                                    <h3 className="mt-1 font-semibold text-gray-800">
+                                    <h3 className="mt-1 font-semibold text-gray-800 dark:text-gray-200">
                                         Growing Rapidly
                                     </h3>
                                 </div>

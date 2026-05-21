@@ -69,23 +69,23 @@ const UpdatePost = ({ idea }) => {
       <Button variant="outline" className={'w-full flex items-center gap-3'}>  Update<FaRegEdit /> </Button>
       <Modal.Backdrop>
         <Modal.Container placement="auto">
-          <Modal.Dialog className="sm:max-w-md md:max-w-4xl">
-            <Modal.CloseTrigger />
-            <Modal.Header>
-              <Modal.Icon className=" text-accent-soft-foreground">
+          <Modal.Dialog className="sm:max-w-md md:max-w-4xl dark:bg-slate-800 dark:border-gray-700">
+            <Modal.CloseTrigger className="dark:text-gray-400" />
+            <Modal.Header className="dark:border-gray-700">
+              <Modal.Icon className="text-accent-soft-foreground">
                 <FaEdit className="text-red-500" size={18} />
               </Modal.Icon>
-              <Modal.Heading>Edit Comment</Modal.Heading>
+              <Modal.Heading className="dark:text-gray-100">Edit Comment</Modal.Heading>
             </Modal.Header>
-            <Modal.Body className="p-6">
-              <Surface variant="default">
+            <Modal.Body className="p-6 dark:bg-slate-800">
+              <Surface variant="default" className="dark:bg-slate-800">
                 <form
                   onSubmit={handleSubmit}
-                  className="grid gap-5 bg-white  rounded-2xl  border md:p-10 p-7  shadow-xl"
+                  className="grid gap-5 bg-white dark:bg-slate-700 rounded-2xl border dark:border-gray-700 md:p-10 p-7 shadow-xl"
                 >
                   {/* Project Title */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="project_title" className="font-medium">
+                    <label htmlFor="project_title" className="font-medium dark:text-gray-200">
                       Idea Title *
                     </label>
 
@@ -96,13 +96,13 @@ const UpdatePost = ({ idea }) => {
                       
                       defaultValue={idea?.project_title}
                       placeholder="e.g. MindMesh — AI Study Buddy for ADHD Learners"
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                      className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                   </div>
 
                   {/* Tagline */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="tagline" className="font-medium">
+                    <label htmlFor="tagline" className="font-medium dark:text-gray-200">
                       Short Description *
                     </label>
 
@@ -113,13 +113,13 @@ const UpdatePost = ({ idea }) => {
                       
                       defaultValue={idea?.tagline}
                       placeholder="One sentence that hooks the reader."
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                      className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                   </div>
 
                   {/* Full Pitch */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="the_full_pitch" className="font-medium">
+                    <label htmlFor="the_full_pitch" className="font-medium dark:text-gray-200">
                       Detailed Description *
                     </label>
 
@@ -130,14 +130,14 @@ const UpdatePost = ({ idea }) => {
                       
                       defaultValue={idea?.pitch_details?.the_full_pitch}
                       placeholder="Tell us the full story — context, mechanics, why now."
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                      className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                   </div>
 
                   {/* Category + Tags */}
                   <div className="grid md:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="category" className="font-medium">
+                      <label htmlFor="category" className="font-medium dark:text-gray-200">
                         Category *
                       </label>
 
@@ -146,20 +146,20 @@ const UpdatePost = ({ idea }) => {
                         name="category"
                       
                         defaultValue={idea?.metadata?.category}
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none bg-white transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none bg-white transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                       >
-                        <option value="">Select category</option>
-                        <option value="AI">AI</option>
-                        <option value="SaaS">SaaS</option>
-                        <option value="EdTech">EdTech</option>
-                        <option value="FinTech">FinTech</option>
-                        <option value="Health">Health</option>
-                        <option value="Marketplace">Marketplace</option>
+                        <option value="" className="dark:bg-slate-600">Select category</option>
+                        <option value="AI" className="dark:bg-slate-600">AI</option>
+                        <option value="SaaS" className="dark:bg-slate-600">SaaS</option>
+                        <option value="EdTech" className="dark:bg-slate-600">EdTech</option>
+                        <option value="FinTech" className="dark:bg-slate-600">FinTech</option>
+                        <option value="Health" className="dark:bg-slate-600">Health</option>
+                        <option value="Marketplace" className="dark:bg-slate-600">Marketplace</option>
                       </select>
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="tags" className="font-medium">
+                      <label htmlFor="tags" className="font-medium dark:text-gray-200">
                         Tags
                       </label>
 
@@ -169,14 +169,14 @@ const UpdatePost = ({ idea }) => {
                         type="text"
                         defaultValue={idea?.tags?.join(', ')}
                         placeholder="AI, climate, marketplace"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                       />
                     </div>
                   </div>
 
                   {/* Image */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="image" className="font-medium">
+                    <label htmlFor="image" className="font-medium dark:text-gray-200">
                       Image URL *
                     </label>
 
@@ -187,14 +187,14 @@ const UpdatePost = ({ idea }) => {
                     
                       defaultValue={idea?.image}
                       placeholder="https://..."
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                      className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                   </div>
 
                   {/* Budget + Target */}
                   <div className="grid md:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="budget" className="font-medium">
+                      <label htmlFor="budget" className="font-medium dark:text-gray-200">
                         Estimated Budget
                       </label>
 
@@ -204,12 +204,12 @@ const UpdatePost = ({ idea }) => {
                         type="text"
                         defaultValue={idea?.metadata?.budget}
                         placeholder="$80k seed"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                       />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="target" className="font-medium">
+                      <label htmlFor="target" className="font-medium dark:text-gray-200">
                         Target Audience *
                       </label>
 
@@ -220,14 +220,14 @@ const UpdatePost = ({ idea }) => {
                        
                         defaultValue={idea?.metadata?.target}
                         placeholder="University students, remote teams..."
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                       />
                     </div>
                   </div>
 
                   {/* Problem Statement */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="the_problem" className="font-medium">
+                    <label htmlFor="the_problem" className="font-medium dark:text-gray-200">
                       Problem Statement *
                     </label>
 
@@ -238,13 +238,13 @@ const UpdatePost = ({ idea }) => {
                      
                       defaultValue={idea?.pitch_details?.the_problem}
                       placeholder="What's broken today?"
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                      className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                   </div>
 
                   {/* Proposed Solution */}
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="the_proposed_solution" className="font-medium">
+                    <label htmlFor="the_proposed_solution" className="font-medium dark:text-gray-200">
                       Proposed Solution *
                     </label>
 
@@ -255,7 +255,7 @@ const UpdatePost = ({ idea }) => {
                      
                       defaultValue={idea?.pitch_details?.the_proposed_solution}
                       placeholder="How will you fix it?"
-                      className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                      className="w-full rounded-xl border border-gray-300 dark:border-gray-600 dark:bg-slate-600 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                   </div>
 

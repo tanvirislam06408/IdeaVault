@@ -7,7 +7,7 @@ import { LiaLinkedin } from "react-icons/lia";
 
 const Footer = () => {
     return (
-        <footer className="mt-20 border-t border-gray-200 bg-[#f8f8fb]">
+        <footer className="mt-20 border-t border-gray-200 dark:border-gray-800 bg-[#f8f8fb] dark:bg-slate-900">
             <div className="mx-auto grid container gap-12 px-6 py-14 md:grid-cols-4">
                 <div>
                     <Link href="/" className="mb-4 flex items-center gap-3">
@@ -20,17 +20,17 @@ const Footer = () => {
                         </h2>
                     </Link>
 
-                    <p className="max-w-xs text-sm leading-7 text-gray-500">
+                    <p className="max-w-xs text-sm leading-7 text-gray-500 dark:text-gray-400">
                         Where bold startup ideas meet the community that helps shape them.
                     </p>
                 </div>
 
                 <div>
-                    <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-black">
+                    <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-black dark:text-gray-100">
                         Platform
                     </h3>
 
-                    <ul className="space-y-3 text-sm text-gray-500">
+                    <ul className="space-y-3 text-sm text-gray-500 dark:text-gray-400">
                         <li>
                             <Link
                                 href="/ideas"
@@ -70,11 +70,11 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-black">
+                    <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-black dark:text-gray-100">
                         Contact
                     </h3>
 
-                    <div className="space-y-4 text-sm text-gray-500">
+                    <div className="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                         <p className="flex items-center gap-2">
                             <Mail size={16} />
                             mstanvirislam05@gmail.com
@@ -85,28 +85,28 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-black">
+                    <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-black dark:text-gray-100">
                         Follow
                     </h3>
 
                     <div className="flex items-center gap-3">
                         <Link
                             href="https://twitter.com"
-                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-rose-500 hover:text-rose-500"
+                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 transition hover:border-rose-500 hover:text-rose-500 dark:hover:border-rose-500 dark:hover:text-rose-400"
                         >
                             <BsTwitter size={16} />
                         </Link>
 
                         <Link
                             href="https://github.com"
-                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-rose-500 hover:text-rose-500"
+                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 transition hover:border-rose-500 hover:text-rose-500 dark:hover:border-rose-500 dark:hover:text-rose-400"
                         >
                             <FaGithub size={16} />
                         </Link>
 
                         <Link
                             href="https://linkedin.com"
-                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-700 transition hover:border-rose-500 hover:text-rose-500"
+                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 transition hover:border-rose-500 hover:text-rose-500 dark:hover:border-rose-500 dark:hover:text-rose-400"
                         >
 
                             <FaLinkedin size={16} />
@@ -115,8 +115,8 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="border-t border-gray-200">
-                <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-gray-500 md:flex-row md:items-center md:justify-between">
+            <div className="border-t border-gray-200 dark:border-gray-800">
+                <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-gray-500 dark:text-gray-400 md:flex-row md:items-center md:justify-between">
                     <p>
                         © 2026 IdeaVault. All rights reserved.
                     </p>

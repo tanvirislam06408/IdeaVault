@@ -23,18 +23,18 @@ const DeleteComment = ({ comment, id, refetchComments }) => {
             </Button>
             <AlertDialog.Backdrop>
                 <AlertDialog.Container>
-                    <AlertDialog.Dialog className="sm:max-w-[400px]">
-                        <AlertDialog.CloseTrigger />
-                        <AlertDialog.Header>
+                    <AlertDialog.Dialog className="sm:max-w-[400px] dark:bg-slate-800">
+                        <AlertDialog.CloseTrigger className="dark:text-gray-400" />
+                        <AlertDialog.Header className="dark:border-gray-700">
                             <AlertDialog.Icon status="danger" />
-                            <AlertDialog.Heading>Delete your comment permanently?</AlertDialog.Heading>
+                            <AlertDialog.Heading className="dark:text-gray-100">Delete your comment permanently?</AlertDialog.Heading>
                         </AlertDialog.Header>
-                        <AlertDialog.Body>
-                            <p className="text-black">
+                        <AlertDialog.Body className="dark:border-gray-700">
+                            <p className="text-black dark:text-gray-300">
                                 {comment}
                             </p>
                         </AlertDialog.Body>
-                        <AlertDialog.Footer>
+                        <AlertDialog.Footer className="dark:border-gray-700">
                             <Button slot="close" variant="tertiary">
                                 Cancel
                             </Button>

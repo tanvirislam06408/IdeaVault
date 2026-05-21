@@ -39,16 +39,16 @@ const MyIdeasPage = async () => {
 
     return (
         <div className="mx-auto container mt-10 px-5">
-            <h1 className="font-bold text-2xl mb-3">Ideas you have shared</h1>
+            <h1 className="font-bold text-2xl mb-3 dark:text-gray-100">Ideas you have shared</h1>
             <div>
                 {
                     postsDAta.length === 0 ? (
-                        <div className="flex flex-col items-center justify-center border border-dashed border-gray-200 rounded-3xl p-16 bg-white/50 backdrop-blur-sm mt-8 shadow-sm transition-all duration-300">
+                        <div className="flex flex-col items-center justify-center border border-dashed border-gray-200 dark:border-gray-700 rounded-3xl p-16 bg-white dark:bg-slate-800 bg-opacity-50 dark:bg-opacity-50 backdrop-blur-sm mt-8 shadow-sm transition-all duration-300">
                             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-lg shadow-rose-200/50 mb-5">
                                 <Lightbulb size={24} className="stroke-[2.5]" />
                             </div>
-                            <h2 className="text-xl font-semibold text-gray-900 mb-2">No ideas yet</h2>
-                            <p className="text-gray-500 text-sm max-w-sm mb-6 leading-relaxed text-center">
+                            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">No ideas yet</h2>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm max-w-sm mb-6 leading-relaxed text-center">
                                 Share your first concept — the vault is waiting.
                             </p>
                             <Link

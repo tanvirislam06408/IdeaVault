@@ -8,7 +8,7 @@ import { FcLike } from "react-icons/fc";
 const FeaturedCard = ({ idea }) => {
   return (
     <div className="">
-      <Card className="border h-full flex flex-col justify-between ">
+      <Card className="border h-full flex flex-col justify-between dark:bg-slate-800 dark:border-gray-700 dark:text-gray-100">
         <div>
           <div>
             <Image src={idea?.image} width={500} height={300} alt={idea.project_title} className="rounded-2xl mb-3 transition-all duration-500 hover:scale-103 w-full h-[250px]" />

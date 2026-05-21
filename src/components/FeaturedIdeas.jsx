@@ -9,7 +9,7 @@ const FeaturedIdeas = async () => {
         <div className='container mx-auto mt-20 px-5'>
             
 
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-gray-100 leading-tight mb-6">
                 Ideas the community is loving
             </h1>
 

@@ -80,21 +80,20 @@ const AddIdea = () => {
                 <p className="flex items-center my-4 gap-2.5 gradient-text">
                     <Sparkles className="text-rose-500" /> New Idea
                 </p>
-                <h1 className="text-3xl font-bold">Drop your concept
+                <h1 className="text-3xl font-bold dark:text-gray-100">Drop your concept
                 </h1>
 
-                <p className="text-gray-500 mt-2">
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
                     Share your startup or project concept with the community.
                 </p>
             </div>
 
             <form
                 onSubmit={handleSubmit}
-                className="grid gap-5 bg-white  rounded-2xl  border md:p-10 p-7  shadow-xl"
+                className="grid gap-5 bg-white dark:bg-slate-800 rounded-2xl border dark:border-gray-700 md:p-10 p-7 shadow-xl"
             >
-                {/* Project Title */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="project_title" className="font-medium">
+                    <label htmlFor="project_title" className="font-medium dark:text-gray-200">
                         Idea Title *
                     </label>
 
@@ -104,13 +103,12 @@ const AddIdea = () => {
                         type="text"
                         required
                         placeholder="e.g. MindMesh — AI Study Buddy for ADHD Learners"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
-                {/* Tagline */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="tagline" className="font-medium">
+                    <label htmlFor="tagline" className="font-medium dark:text-gray-200">
                         Short Description *
                     </label>
 
@@ -120,13 +118,13 @@ const AddIdea = () => {
                         type="text"
                         required
                         placeholder="One sentence that hooks the reader."
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
                 {/* Full Pitch */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="the_full_pitch" className="font-medium">
+                    <label htmlFor="the_full_pitch" className="font-medium dark:text-gray-200">
                         Detailed Description *
                     </label>
 
@@ -136,14 +134,13 @@ const AddIdea = () => {
                         rows={5}
                         required
                         placeholder="Tell us the full story — context, mechanics, why now."
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
-                {/* Category + Tags */}
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="category" className="font-medium">
+                        <label htmlFor="category" className="font-medium dark:text-gray-200">
                             Category *
                         </label>
 
@@ -151,20 +148,20 @@ const AddIdea = () => {
                             id="category"
                             name="category"
                             required
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none bg-white transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 px-4 py-3 outline-none bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         >
-                            <option value="">Select category</option>
-                            <option value="AI">AI</option>
-                            <option value="SaaS">SaaS</option>
-                            <option value="EdTech">EdTech</option>
-                            <option value="FinTech">FinTech</option>
-                            <option value="Health">Health</option>
-                            <option value="Marketplace">Marketplace</option>
+                            <option value="" className="dark:bg-slate-900">Select category</option>
+                            <option value="AI" className="dark:bg-slate-900">AI</option>
+                            <option value="SaaS" className="dark:bg-slate-900">SaaS</option>
+                            <option value="EdTech" className="dark:bg-slate-900">EdTech</option>
+                            <option value="FinTech" className="dark:bg-slate-900">FinTech</option>
+                            <option value="Health" className="dark:bg-slate-900">Health</option>
+                            <option value="Marketplace" className="dark:bg-slate-900">Marketplace</option>
                         </select>
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="tags" className="font-medium">
+                        <label htmlFor="tags" className="font-medium dark:text-gray-200">
                             Tags
                         </label>
 
@@ -173,14 +170,13 @@ const AddIdea = () => {
                             name="tags"
                             type="text"
                             placeholder="AI, climate, marketplace"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
                 </div>
 
-                {/* Image */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="image" className="font-medium">
+                    <label htmlFor="image" className="font-medium dark:text-gray-200">
                         Image URL *
                     </label>
 
@@ -190,14 +186,14 @@ const AddIdea = () => {
                         type="url"
                         required
                         placeholder="https://..."
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
                 {/* Budget + Target */}
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="budget" className="font-medium">
+                        <label htmlFor="budget" className="font-medium dark:text-gray-200">
                             Estimated Budget
                         </label>
 
@@ -206,12 +202,12 @@ const AddIdea = () => {
                             name="budget"
                             type="text"
                             placeholder="$80k seed"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="target" className="font-medium">
+                        <label htmlFor="target" className="font-medium dark:text-gray-200">
                             Target Audience *
                         </label>
 
@@ -221,14 +217,13 @@ const AddIdea = () => {
                             type="text"
                             required
                             placeholder="University students, remote teams..."
-                            className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
                 </div>
 
-                {/* Problem Statement */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="the_problem" className="font-medium">
+                    <label htmlFor="the_problem" className="font-medium dark:text-gray-200">
                         Problem Statement *
                     </label>
 
@@ -238,13 +233,13 @@ const AddIdea = () => {
                         rows={3}
                         required
                         placeholder="What's broken today?"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
                 {/* Proposed Solution */}
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="the_proposed_solution" className="font-medium">
+                    <label htmlFor="the_proposed_solution" className="font-medium dark:text-gray-200">
                         Proposed Solution *
                     </label>
 
@@ -254,7 +249,7 @@ const AddIdea = () => {
                         rows={3}
                         required
                         placeholder="How will you fix it?"
-                        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 

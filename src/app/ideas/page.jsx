@@ -29,10 +29,10 @@ const AllIdeaPage = async ({ searchParams }) => {
                 Explore
             </p>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-3">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-gray-100 leading-tight mb-3">
                 All ideas in the vault
             </h1>
-            <p className='text-muted text-xl '>Search, filter, and find the spark you've been looking for.</p>
+            <p className='text-muted dark:text-gray-400 text-xl '>Search, filter, and find the spark you've been looking for.</p>
             <SearchFilter searchIdeas={searchIdeas} ideas={ideas} />
         </div>
     );

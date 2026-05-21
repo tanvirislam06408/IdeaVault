@@ -33,28 +33,28 @@ const UpdateProfile = () => {
             </Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
-                    <Modal.Dialog className="sm:max-w-md">
-                        <Modal.CloseTrigger />
-                        <Modal.Header>
+                    <Modal.Dialog className="sm:max-w-md dark:bg-slate-800 dark:border-gray-700">
+                        <Modal.CloseTrigger className="dark:text-gray-400" />
+                        <Modal.Header className="dark:border-gray-700">
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
                                 <SquarePen className="size-5" color='red' />
                             </Modal.Icon>
-                            <Modal.Heading>Edit Profile</Modal.Heading>
+                            <Modal.Heading className="dark:text-gray-100">Edit Profile</Modal.Heading>
                         </Modal.Header>
-                        <Modal.Body className="p-6">
-                            <Surface variant="default">
+                        <Modal.Body className="p-6 dark:bg-slate-800">
+                            <Surface variant="default" className="dark:bg-slate-800">
                                 <form onSubmit={hanldeSubmit} className="flex flex-col gap-4">
-                                    <TextField className="w-full" name="name" type="text">
-                                        <Label>Name</Label>
-                                        <Input className="focus:ring-red-500 focus:border-red-500 focus:outline-red-500 focus:outline focus:outline-2 focus-within:outline-red-500" placeholder="Enter your name" />
+                                    <TextField className="w-full dark:text-gray-100" name="name" type="text">
+                                        <Label className="dark:text-gray-200">Name</Label>
+                                        <Input className="focus:ring-red-500 focus:border-red-500 focus:outline-red-500 focus:outline focus:outline-2 focus-within:outline-red-500 dark:bg-slate-600 dark:text-gray-100 dark:border-gray-600" placeholder="Enter your name" />
                                     </TextField>
 
-                                    <TextField className="w-full" name="image">
-                                        <Label>Image</Label>
-                                        <Input className="focus:ring-red-500 focus:border-red-500 focus:outline-red-500 focus:outline focus:outline-2 focus-within:outline-red-500" placeholder="Enter your image" />
+                                    <TextField className="w-full dark:text-gray-100" name="image">
+                                        <Label className="dark:text-gray-200">Image</Label>
+                                        <Input className="focus:ring-red-500 focus:border-red-500 focus:outline-red-500 focus:outline focus:outline-2 focus-within:outline-red-500 dark:bg-slate-600 dark:text-gray-100 dark:border-gray-600" placeholder="Enter your image" />
                                     </TextField>
-                                    <Modal.Footer className="flex gap-2 justify-end p-4">
-                                        <Button className={'border'} variant="outlined " slot="close">Cancel</Button>
+                                    <Modal.Footer className="flex gap-2 justify-end p-4 dark:border-gray-700">
+                                        <Button className={'border dark:border-gray-600 dark:bg-slate-700 dark:text-gray-300'} variant="outlined " slot="close">Cancel</Button>
                                         <Button type='submit' variant="soft" className={'gradient-button'} slot="close">Save</Button>
                                     </Modal.Footer>
                                 </form>

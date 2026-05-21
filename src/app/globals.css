@@ -1,6 +1,45 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Light Mode */
+:root {
+  color-scheme: light;
+}
+
+html {
+  @apply bg-white text-gray-900;
+}
+
+body {
+  @apply bg-white text-gray-900;
+}
+
+/* Dark Mode */
+html.dark {
+  color-scheme: dark;
+  @apply bg-slate-950 text-gray-50;
+}
+
+html.dark body {
+  @apply bg-slate-950 text-gray-50;
+}
+
+/* Dark Mode Utilities */
+.dark {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+}
+
+.light {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+}
+
+/* Gradient Text */
 .gradient-text {
   background: linear-gradient(to right, #f97316, #f43f5e);
   -webkit-background-clip: text;
@@ -8,10 +47,88 @@
   color: transparent;
 }
 
+/* Gradient Button */
 .gradient-button {
   background: linear-gradient(to right, #f97316, #f43f5e);
   color: white;
   transition: 0.3s ease;
+}
+
+.gradient-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+/* Dark Mode - Borders */
+.dark {
+  & .border-b,
+  & .border-t,
+  & .border-l,
+  & .border-r,
+  & .border {
+    @apply border-gray-800;
+  }
+}
+
+/* Dark Mode - Cards */
+.dark {
+  & [class*="Card"] {
+    @apply bg-slate-900 text-gray-50 border-gray-800;
+  }
+}
+
+/* Dark Mode - Inputs */
+.dark {
+  & input,
+  & textarea,
+  & select {
+    @apply bg-slate-800 text-gray-50 border-gray-700;
+    &::placeholder {
+      @apply text-gray-400;
+    }
+    &:focus {
+      @apply border-orange-500 ring-orange-500/20;
+    }
+  }
+}
+
+/* Dark Mode - Hover States */
+.dark {
+  & button:not(.gradient-button),
+  & a {
+    &:hover {
+      @apply text-orange-400;
+    }
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+  &:hover {
+    @apply bg-gray-500;
+  }
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+  &:hover {
+    @apply bg-gray-600;
+  }
 }
 
 

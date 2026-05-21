@@ -46,18 +46,18 @@ const LoginPage = () => {
 
 
   return (
-    <div className="flex flex-col md:flex-row gap-1.5 items-center justify-center min-h-[70vh] px-4 mt-16">
+    <div className="flex flex-col md:flex-row gap-1.5 items-center justify-center min-h-[70vh] px-4 mt-16 dark:bg-slate-950">
       <div className='flex-1 md:max-w-[40%] max-w-[70%]'>
         <Lottie animationData={animationData} />
       </div>
-      <div className="w-full flex-1 max-w-md bg-white border shadow-rose-100 border-gray-200 rounded-2xl shadow-lg p-8">
+      <div className="w-full flex-1 max-w-md bg-white dark:bg-slate-800 border dark:border-gray-700 shadow-rose-100 dark:shadow-none rounded-2xl shadow-lg p-8">
 
         {/* Header */}
-        <h1 className="text-2xl font-bold text-center text-gray-900">
+        <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100">
           Welcome back
         </h1>
 
-        <p className="text-center text-sm text-gray-500 mt-2 mb-6">
+        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2 mb-6">
           Log in to continue building and sharing ideas.
         </p>
 
@@ -78,13 +78,13 @@ const LoginPage = () => {
               return null;
             }}
           >
-            <Label className="text-sm font-medium text-gray-700">
+            <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">
               Email
             </Label>
 
             <Input
               placeholder="john@example.com"
-              className="w-full"
+              className="w-full dark:bg-slate-700 dark:text-gray-100 dark:border-gray-600"
             />
 
             <FieldError className="text-red-500 text-xs mt-1" />
@@ -109,13 +109,13 @@ const LoginPage = () => {
               return null;
             }}
           >
-            <Label className="text-sm font-medium text-gray-700">
+            <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">
               Password
             </Label>
 
             <Input
               placeholder="Enter your password"
-              className="w-full"
+              className="w-full dark:bg-slate-700 dark:text-gray-100 dark:border-gray-600"
             />
 
             <Description className="text-xs text-rose-500 cursor-pointer mt-1 hover:underline">
@@ -133,11 +133,11 @@ const LoginPage = () => {
             Login
           </Button>
         </form>
-        <div className=' mt-4 text-center flex items-center gap-1.5 '><div className='border border-r-gray-400 w-full'></div> <p>OR</p>
-          <div className='border border-r-gray-400 w-full '></div>
+        <div className=' mt-4 text-center flex items-center gap-1.5 dark:text-gray-300'><div className='border border-r-gray-400 dark:border-gray-600 w-full'></div> <p>OR</p>
+          <div className='border border-r-gray-400 dark:border-gray-600 w-full '></div>
         </div>
         <SocialLogin />
-        <p className='text-center mt-3 text-muted'>New here ? <Link className='text-rose-500' href={'/register'}>Create a account</Link></p>
+        <p className='text-center mt-3 text-muted dark:text-gray-400'>New here ? <Link className='text-rose-500' href={'/register'}>Create a account</Link></p>
       </div>
     </div>
   );

@@ -53,13 +53,13 @@ const SearchFilter = ({ searchIdeas, ideas }) => {
         <div>
             <div className="flex justify-between w-full flex-col md:flex-row items-center gap-4">
 
-                <div className="flex flex-1 items-center max-w rounded-2xl bg-white px-5 py-4">
+                <div className="flex flex-1 items-center max-w rounded-2xl bg-white dark:bg-slate-800 dark:border dark:border-gray-700 px-5 py-4">
 
                     <SearchField name="search" value={search} onChange={setSearch}>
                         <Label className="gradient-text my-3">Search Start-Up ideas</Label>
                         <SearchField.Group>
                             <SearchField.SearchIcon />
-                            <SearchField.Input className={"focus:ring-0 focus:ring-red-500 focus:outline-none"} placeholder="Search..." />
+                            <SearchField.Input className={"focus:ring-0 focus:ring-red-500 focus:outline-none dark:text-gray-100"} placeholder="Search..." />
                             <SearchField.ClearButton />
                         </SearchField.Group>
                     </SearchField>
@@ -70,7 +70,7 @@ const SearchFilter = ({ searchIdeas, ideas }) => {
 
                     {/* Dropdown Menu */}
                     <Dropdown>
-                        <Button aria-label="Menu" variant="outline" className={'gradiend-button'}>
+                        <Button aria-label="Menu" variant="outline" className={'gradient-button'}>
                             {catValue ? `Category: ${catValue}` : "Categories"}
                             <FiChevronDown className="text-xl text-slate-500" />
                         </Button>
@@ -94,7 +94,7 @@ const SearchFilter = ({ searchIdeas, ideas }) => {
                 </div>
                 <div>
                     <Dropdown>
-                        <Button aria-label="Menu" variant="outline" className={'gradiend-button'}>
+                        <Button aria-label="Menu" variant="outline" className={'gradient-button'}>
                             {sort === 'newToOld' ? "Newest to Oldest" : sort === 'oldToNew' ? "Oldest to Newest" : "Sort By"}
                             <FiChevronDown className="text-xl text-slate-500" />
                         </Button>
@@ -118,7 +118,7 @@ const SearchFilter = ({ searchIdeas, ideas }) => {
 
             {/* cards */}
             <p className='text-muted text-sm mt-3'>
-                Showing <span className='font-bold text-black'>{filteredIdeas.length}</span> ideas
+                Showing <span className='font-bold text-black dark:text-white'>{filteredIdeas.length}</span> ideas
             </p>
             <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {

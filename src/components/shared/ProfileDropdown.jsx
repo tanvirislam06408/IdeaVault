@@ -22,8 +22,8 @@ export async function ProfileDropdown() {
                     <Avatar.Fallback delayMs={600}>{session?.user.name.slice(0, 2).toUpperCase()}</Avatar.Fallback>
                 </Avatar>
             </Dropdown.Trigger>
-            <Dropdown.Popover>
-                <div className="px-3 pt-3 pb-1">
+            <Dropdown.Popover className="dark:bg-slate-800">
+                <div className="px-3 pt-3 pb-1 dark:bg-slate-800">
                     <div className="flex items-center gap-2">
                         <Avatar size="sm">
                             <Avatar.Image
@@ -32,13 +32,13 @@ export async function ProfileDropdown() {
                             />
                             <Avatar.Fallback delayMs={600}>{session?.user.name.slice(0, 2).toUpperCase()}</Avatar.Fallback>
                         </Avatar>
-                        <div className="flex flex-col gap-0">
+                        <div className="flex flex-col gap-0 dark:text-gray-200">
                             <p className="text-sm leading-5 font-medium">{session?.user.name}</p>
-                            <p className="text-xs leading-none text-muted">{session?.user.email}</p>
+                            <p className="text-xs leading-none text-muted dark:text-gray-400">{session?.user.email}</p>
                         </div>
                     </div>
                 </div>
-                <Dropdown.Menu>
+                <Dropdown.Menu className="dark:bg-slate-800">
                     <Dropdown.Item id="profile" textValue="Profile">
                         <Link
                          href={'/profile'} className="flex w-full items-center justify-between gap-2">

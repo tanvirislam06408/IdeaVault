@@ -36,18 +36,18 @@ const features = [
 
 const WhyUs = () => {
     return (
-        <section className="container mx-auto py-20 px-4">
+        <section className="container mx-auto py-20 px-4 dark:text-gray-100">
 
             <div className="max-w-4xl mb-16">
                 <p className="text-rose-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">
                     Why IdeaVault
                 </p>
 
-                <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
+                <h1 className="text-4xl md:text-6xl font-bold text-black dark:text-gray-100 leading-tight mb-6">
                     Built for the lonely middle of the night
                 </h1>
 
-                <p className="text-lg md:text-2xl text-slate-500 leading-relaxed">
+                <p className="text-lg md:text-2xl text-slate-500 dark:text-gray-400 leading-relaxed">
                     When you can't sleep because of an idea, we're the place to drop it.
                 </p>
             </div>
@@ -56,18 +56,18 @@ const WhyUs = () => {
                 {features.map((feature, index) => (
                     <div
                         key={index}
-                        className="border border-slate-200 rounded-3xl p-10 bg-white hover:shadow-xl transition-all duration-300"
+                        className="border border-slate-200 dark:border-gray-700 rounded-3xl p-10 bg-white dark:bg-slate-800 hover:shadow-xl dark:hover:shadow-slate-900 transition-all duration-300"
                     >
 
-                        <div className="w-16 h-16 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mb-8">
+                        <div className="w-16 h-16 rounded-2xl bg-rose-50 dark:bg-rose-900/20 text-rose-500 flex items-center justify-center mb-8">
                             {feature.icon}
                         </div>
 
-                        <h2 className="text-2xl font-bold text-slate-900 mb-5">
+                        <h2 className="text-2xl font-bold text-slate-900 dark:text-gray-100 mb-5">
                             {feature.title}
                         </h2>
 
-                        <p className="text-slate-500 text-lg leading-relaxed">
+                        <p className="text-slate-500 dark:text-gray-400 text-lg leading-relaxed">
                             {feature.description}
                         </p>
                     </div>

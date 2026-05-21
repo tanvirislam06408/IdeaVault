@@ -16,7 +16,7 @@ export default async function Navbar() {
     headers: await headers()
   })
   return (
-    <nav className="w-full border-b bg-white">
+    <nav className="w-full border-b bg-white dark:bg-slate-900 dark:border-gray-800">
       <div className="mx-auto flex container items-center justify-between px-6 py-4">
 
 
@@ -69,9 +69,9 @@ export default async function Navbar() {
 
 {!session?.user?(<><Link
             href="/login"
-            className="hidden text-sm font-medium text-gray-700 sm:block"
+            className="hidden text-sm font-medium text-gray-700 dark:text-gray-300 sm:block"
           >
-            <Button variant="ghost">Login</Button>
+            <Button variant="ghost" className="dark:hover:bg-slate-800">Login</Button>
           </Link>
 
           <Link

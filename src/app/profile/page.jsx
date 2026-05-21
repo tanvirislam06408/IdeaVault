@@ -16,9 +16,9 @@ const ProfilePage = () => {
   const user = data?.user;
 
   return (
-    <div className="min-h-[85vh] bg-gradient-to-br from-red-50 via-white to-rose-100 flex items-center justify-center px-4 py-10">
+    <div className="min-h-[85vh] bg-gradient-to-br from-red-50 via-white to-rose-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center px-4 py-10">
       
-      <Card className="w-full max-w-md rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+      <Card className="w-full max-w-md rounded-3xl shadow-2xl overflow-hidden border border-white/20 dark:bg-slate-800 dark:border-gray-700">
         
         <div className="relative h-36 bg-gradient-to-r from-red-500 via-rose-500 to-pink-500">
           
@@ -43,53 +43,53 @@ const ProfilePage = () => {
 
         <div className="pt-20 pb-8 px-6 text-center">
           
-          <h2 className="text-2xl font-bold text-gray-800">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
             {user?.name || "Anonymous User"}
           </h2>
 
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             Welcome back to your dashboard
           </p>
 
           <div className="mt-8 space-y-4">
             
-            <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+            <div className="flex items-center gap-4 bg-gray-50 dark:bg-slate-700 p-4 rounded-2xl">
               
-              <div className="bg-red-100 p-3 rounded-xl">
+              <div className="bg-red-100 dark:bg-red-900/30 p-3 rounded-xl">
                 <User2 size={20} className="text-red-500" />
               </div>
 
               <div className="text-left">
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   Full Name
                 </p>
 
-                <h4 className="font-semibold text-gray-800">
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200">
                   {user?.name}
                 </h4>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+            <div className="flex items-center gap-4 bg-gray-50 dark:bg-slate-700 p-4 rounded-2xl">
               
-              <div className="bg-blue-100 p-3 rounded-xl">
+              <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-xl">
                 <Mail size={20} className="text-blue-500" />
               </div>
 
               <div className="text-left overflow-hidden">
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   Email Address
                 </p>
 
-                <h4 className="font-semibold text-gray-800 truncate">
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 truncate">
                   {user?.email}
                 </h4>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
+            <div className="flex items-center gap-4 bg-gray-50 dark:bg-slate-700 p-4 rounded-2xl">
               
-              <div className="bg-green-100 p-3 rounded-xl">
+              <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-xl">
                 <ShieldCheck
                   size={20}
                   className="text-green-500"
@@ -97,11 +97,11 @@ const ProfilePage = () => {
               </div>
 
               <div className="text-left">
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   Account Status
                 </p>
 
-                <h4 className="font-semibold text-green-600">
+                <h4 className="font-semibold text-green-600 dark:text-green-400">
                   Verified Account
                 </h4>
               </div>
