@@ -70,7 +70,7 @@ const SearchFilter = ({ searchIdeas, ideas }) => {
 
                     {/* Dropdown Menu */}
                     <Dropdown>
-                        <Button aria-label="Menu" variant="outline" className={'gradient-button'}>
+                        <Button aria-label="Menu" variant="outline" >
                             {catValue ? `Category: ${catValue}` : "Categories"}
                             <FiChevronDown className="text-xl text-slate-500" />
                         </Button>
@@ -94,7 +94,7 @@ const SearchFilter = ({ searchIdeas, ideas }) => {
                 </div>
                 <div>
                     <Dropdown>
-                        <Button aria-label="Menu" variant="outline" className={'gradient-button'}>
+                        <Button aria-label="Menu" variant="outline">
                             {sort === 'newToOld' ? "Newest to Oldest" : sort === 'oldToNew' ? "Oldest to Newest" : "Sort By"}
                             <FiChevronDown className="text-xl text-slate-500" />
                         </Button>

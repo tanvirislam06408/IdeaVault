@@ -103,7 +103,7 @@ const AddIdea = () => {
                         type="text"
                         required
                         placeholder="e.g. MindMesh — AI Study Buddy for ADHD Learners"
-                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -118,7 +118,7 @@ const AddIdea = () => {
                         type="text"
                         required
                         placeholder="One sentence that hooks the reader."
-                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -134,7 +134,7 @@ const AddIdea = () => {
                         rows={5}
                         required
                         placeholder="Tell us the full story — context, mechanics, why now."
-                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -148,7 +148,7 @@ const AddIdea = () => {
                             id="category"
                             name="category"
                             required
-                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 px-4 py-3 outline-none bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 px-4 py-3 outline-none bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         >
                             <option value="" className="dark:bg-slate-900">Select category</option>
                             <option value="AI" className="dark:bg-slate-900">AI</option>
@@ -170,7 +170,7 @@ const AddIdea = () => {
                             name="tags"
                             type="text"
                             placeholder="AI, climate, marketplace"
-                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
                 </div>
@@ -186,7 +186,7 @@ const AddIdea = () => {
                         type="url"
                         required
                         placeholder="https://..."
-                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -202,7 +202,7 @@ const AddIdea = () => {
                             name="budget"
                             type="text"
                             placeholder="$80k seed"
-                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
 
@@ -217,7 +217,7 @@ const AddIdea = () => {
                             type="text"
                             required
                             placeholder="University students, remote teams..."
-                            className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                            className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                         />
                     </div>
                 </div>
@@ -233,7 +233,7 @@ const AddIdea = () => {
                         rows={3}
                         required
                         placeholder="What's broken today?"
-                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 
@@ -249,7 +249,7 @@ const AddIdea = () => {
                         rows={3}
                         required
                         placeholder="How will you fix it?"
-                        className="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
+                        className="w-full rounded-xl border border-gray-300  ring-gray-200 ring-1 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 px-4 py-3 outline-none resize-none transition-all duration-200 focus:ring-2 focus:ring-rose-500 focus:border-rose-500"
                     />
                 </div>
 

@@ -2,14 +2,21 @@
 import { authClient } from '@/lib/auth.client';
 import { Button } from '@heroui/react';
 import { Icon } from "@iconify/react";
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const SocialLogin = () => {
 
+  const searchParams= useSearchParams();
+  const target=searchParams.get("callbackUrl") || '/'
+  const router=useRouter();
     const signIn = async () => {
-        const data = await authClient.signIn.social({
+        const {data,error} = await authClient.signIn.social({
             provider: "google",
         });
+
         console.log(data);
+        
+        
         
     };
 

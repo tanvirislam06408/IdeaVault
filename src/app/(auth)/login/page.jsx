@@ -15,12 +15,19 @@ import Lottie from 'lottie-react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth.client';
 import toast from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 
 const LoginPage = () => {
   const [err, setErr] = useState()
   const router=useRouter();
+
+
+const searchParams= useSearchParams();
+const target=searchParams.get("callbackUrl") || '/'
+
+
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,7 +40,7 @@ const LoginPage = () => {
     })
     if(data?.user){
       toast.success('login successful');
-      router.push('/')
+      router.push(target)
     }
   
     if (error) {
