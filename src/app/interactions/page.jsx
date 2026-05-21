@@ -5,6 +5,12 @@ import Link from "next/link";
 import React from "react";
 import { FiMessageCircle } from "react-icons/fi";
 
+
+export const metadata = {
+  title: "interactions-ideas",
+  description: "Idea vault",
+};
+
 const MyInteractions = async () => {
     const session = await auth.api.getSession({
         headers: await headers()

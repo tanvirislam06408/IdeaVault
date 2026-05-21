@@ -3,6 +3,13 @@ import SearchFilter from '@/components/shared/SearchFilter';
 import { getIdeas } from '@/lib/data';
 import React from 'react';
 
+
+export const metadata = {
+  title: "All Ideas - share your ideas",
+  description: "Idea vault",
+};
+
+
 const AllIdeaPage = async ({ searchParams }) => {
     const ideas = await getIdeas();
     const sParams =await searchParams;
@@ -14,6 +21,8 @@ const AllIdeaPage = async ({ searchParams }) => {
 
         return data;
     }
+
+
     return (
         <div className='container mx-auto mt-5 px-5'>
             <p className="text-rose-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">

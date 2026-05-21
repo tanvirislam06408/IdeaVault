@@ -8,6 +8,7 @@ import { headers } from "next/headers";
 import SignOut from "./SignOut";
 import SideNav from "./SideNav";
 import { ProfileDropdown } from "./ProfileDropdown";
+import ThemeToggle from "./ThemeToggle";
 
 export default async function Navbar() {
 
@@ -64,9 +65,7 @@ export default async function Navbar() {
         </div>
 
         <div className="flex items-center gap-5">
-          <button className="text-gray-700">
-            <Moon size={18} />
-          </button>
+          <ThemeToggle/>
 
 {!session?.user?(<><Link
             href="/login"

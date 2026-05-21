@@ -8,6 +8,15 @@ import { Lightbulb } from "lucide-react";
 import { headers } from "next/headers";
 import Link from "next/link";
 
+
+
+
+
+export const metadata = {
+  title: "my-ideas-Idea vault",
+  description: "Idea vault",
+};
+
 const MyIdeasPage = async () => {
     // const { data: session } = authClient.useSession();
     const session = await auth.api.getSession({

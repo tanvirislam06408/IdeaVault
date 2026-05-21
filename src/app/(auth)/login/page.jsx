@@ -18,12 +18,6 @@ import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
 
-export const metadata = {
-  title: "login-page - share your ideas",
-  description: "Idea vault",
-};
-
-
 const LoginPage = () => {
   const [err, setErr] = useState()
   const router=useRouter();
