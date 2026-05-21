@@ -9,9 +9,17 @@ const MyInteractions = async () => {
     const session = await auth.api.getSession({
         headers: await headers()
     })
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/interactions/${session?.user?.id}`);
+    const {token}=await auth.api.getToken({
+        headers: await headers()
+    })
+    
+    
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/interactions/${session?.user?.id}`,{
+        headers:{
+            'authorization': `Bearer ${token}`
+        }
+    });
     const data = await res.json();
-    console.log(data);
 
 
 

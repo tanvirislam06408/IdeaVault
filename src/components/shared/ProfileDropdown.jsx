@@ -10,7 +10,6 @@ export async function ProfileDropdown() {
     const session = await auth.api.getSession({
         headers: await headers()
     })
-    console.log(session, "user detail");
 
     return (
         <Dropdown>

@@ -52,11 +52,14 @@ const AddIdea = () => {
             }
         }
 
-
+        const {data:tokenHeader}=await authClient.token();
+        const token=tokenHeader?.token
+        
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/ideas`, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization':`Bearer ${token}`
             },
             body: JSON.stringify(userData)
         })

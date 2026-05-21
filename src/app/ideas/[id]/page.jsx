@@ -28,18 +28,16 @@ const IdeaDetailsPage = () => {
     const [idea, setIdea] = useState([]);
     const [commentData, setCommentData] = useState([]);
     const { data: session } = authClient.useSession();
-    console.log(idea);
 
 
     useEffect(() => {
         const getIdea = async (id) => {
             const res = await getIdeaById(id);
             setIdea(res)
-            console.log(res);
+            
         }
         getIdea(id)
     }, [id])
-
 
 
     // get comments
