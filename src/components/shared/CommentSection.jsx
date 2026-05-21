@@ -18,7 +18,7 @@ const CommentSection = ({ commentData: data, refetchComments }) => {
                 <div key={comment._id} className="flex mt-6 items-start justify-between gap-4 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
                     <div className="flex gap-4">
                         <Image
-                            src={comment.image || "https://i.pravatar.cc/150?img=12"}
+                            src={comment?.image || 'https://imgs.search.brave.com/vrV0ybuqxU18EPrdiMFBwHa_mVS6j_m3R1f5w4-eVpE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjcv/MDUxLzA5My9zbWFs/bC9nYW1lci1hdmF0/YXItM2QtaWxsdXN0/cmF0aW9uLXBuZy5w/bmc'}
                             alt={comment.name || "user"}
                             width={55}
                             height={55}

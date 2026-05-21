@@ -8,16 +8,23 @@ import { Lightbulb } from "lucide-react";
 import { headers } from "next/headers";
 import Link from "next/link";
 
-const MyIdeasPage = async() => {
+const MyIdeasPage = async () => {
     // const { data: session } = authClient.useSession();
-    const session=await auth.api.getSession({
+    const session = await auth.api.getSession({
         headers: await headers()
     })
-    const id=session?.user?.id
-    
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER}/userIdea/${id}`);
-    const postsDAta=await res.json();
-    
+    const id = session?.user?.id
+    const { token } = await auth.api.getToken({
+        headers: await headers()
+    })
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/userIdea/${id}`, {
+        headers: {
+            'authorization': `Bearer ${token}`
+        }
+    });
+    const postsDAta = await res.json();
+
 
 
     return (

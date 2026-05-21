@@ -179,7 +179,7 @@ const IdeaDetailsPage = () => {
                                 </div>
                                 <p className="text-sm text-gray-500">Category</p>
                                 <h3 className="mt-1 font-semibold text-gray-900">
-                                    {idea?.category}
+                                    {idea?.metadata?.category}
                                 </h3>
                             </div>
 
@@ -189,7 +189,7 @@ const IdeaDetailsPage = () => {
                                 </div>
                                 <p className="text-sm text-gray-500">Target Users</p>
                                 <h3 className="mt-1 font-semibold text-gray-900">
-                                    {idea?.targetAudience}
+                                    {idea?.metadata?.target}
                                 </h3>
                             </div>
 
@@ -199,7 +199,7 @@ const IdeaDetailsPage = () => {
                                 </div>
                                 <p className="text-sm text-gray-500">Estimated Budget</p>
                                 <h3 className="mt-1 font-semibold text-gray-900">
-                                    {idea?.budget}
+                                    {idea?.metadata?.budget}
                                 </h3>
                             </div>
                         </div>
