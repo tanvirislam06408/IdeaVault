@@ -144,7 +144,7 @@ const target=searchParams.get("callbackUrl") || '/'
           <div className='border border-r-gray-400 dark:border-gray-600 w-full '></div>
         </div>
         <SocialLogin />
-        <p className='text-center mt-3 text-muted dark:text-gray-400'>New here ? <Link className='text-rose-500' href={'/register'}>Create a account</Link></p>
+        <p className='text-center mt-3 text-muted dark:text-gray-400'>New here ? <Link className='text-rose-500' href={`/register?callbackUrl=${target}`}>Create a account</Link></p>
       </div>
     </div>
   );

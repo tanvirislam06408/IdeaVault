@@ -15,9 +15,16 @@ import Lottie from 'lottie-react';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth.client';
 import toast from 'react-hot-toast';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const RegisterPage = () => {
     const [err, setErr] = useState('');
+
+
+   const searchParams= useSearchParams();
+   const target=searchParams.get("callbackUrl") || '/'
+   const router = useRouter();
+ 
     const onSubmit = async (e) => {
         e.preventDefault();
         setErr('')
@@ -29,7 +36,8 @@ const RegisterPage = () => {
             callbackURL: "/",
         });
         if(data?.user){
-            toast.success("Register successful !")
+            toast.success("Register successful !");
+            router.push(target)
         }
         if (error) {
             setErr(error.message)

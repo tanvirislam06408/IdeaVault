@@ -10,7 +10,11 @@ const ThemeToggle = () => {
  const { theme, setTheme } = useTheme();
     return (
         <Button onClick={()=>setTheme(theme === "dark" ? "light" : "dark")} variant='outline' className="text-gray-700 border-none">
-            {theme === "dark" ? <Moon size={18} /> : <FiSun />}
+           {
+                theme === "dark"
+                    ? <Moon size={18} />
+                    : <FiSun />
+            }
           </Button>
     );
 };
