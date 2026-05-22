@@ -32,27 +32,6 @@
 
 ---
 
-## 💡 Ideas Page
-
-![Ideas Page](https://placehold.co/1200x700/png?text=Ideas+Page)
-
----
-
-## 🔍 Idea Details Page
-
-![Idea Details](https://placehold.co/1200x700/png?text=Idea+Details+Page)
-
----
-
-## ➕ Add Idea Page
-
-![Add Idea](https://placehold.co/1200x700/png?text=Add+Idea+Page)
-
----
-
-## 👤 My Ideas Page
-
-![My Ideas](https://placehold.co/1200x700/png?text=My+Ideas+Page)
 
 ---
 
