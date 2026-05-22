@@ -22,7 +22,7 @@ export async function ProfileDropdown() {
                     <Avatar.Fallback delayMs={600}>{session?.user.name.slice(0, 2).toUpperCase()}</Avatar.Fallback>
                 </Avatar>
             </Dropdown.Trigger>
-            <Dropdown.Popover className="dark:bg-slate-800">
+            <Dropdown.Popover className="">
                 <div className="px-3 pt-3 pb-1 dark:bg-slate-800">
                     <div className="flex items-center gap-2">
                         <Avatar size="sm">
