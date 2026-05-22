@@ -1,3 +1,4 @@
+
 # IdeaVault – Startup Idea Sharing Platform
 
 <div align="center">
@@ -28,7 +29,7 @@
 
 ## 🏠 Home Page
 
-![Home Page](https://placehold.co/1200x700/png?text=IdeaVault+Home+Page)
+<img width="3254" height="6092" alt="localhost_3000_" src="https://github.com/user-attachments/assets/9b19ebcd-44a0-4ea8-8c0e-bbc49e8aacea" />
 
 ---
 
