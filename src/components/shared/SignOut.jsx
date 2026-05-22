@@ -12,6 +12,7 @@ const SignOut = () => {
         toast.error(res.error);
       }else{
         toast.success("Logout successfully");
+        route.push('/')
         route.refresh();
       }
     }

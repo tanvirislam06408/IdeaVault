@@ -20,7 +20,7 @@ const SocialLogin = () => {
         
     };
 
-    return <Button onClick={signIn} className="w-full rounded-xl my-5 dark:bg-slate-800 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-slate-700" variant="outline">
+    return <Button onClick={signIn} className="w-full  rounded-xl my-5 dark:bg-slate-800 dark:border-gray-200 dark:text-gray-200 dark:hover:bg-slate-700" variant="outline">
         <Icon icon="devicon:google" />
         Sign in with Google
     </Button>
