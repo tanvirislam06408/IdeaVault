@@ -42,14 +42,13 @@ export async function ProfileDropdown() {
                     <Dropdown.Item id="profile" textValue="Profile">
                         <Link
                          href={'/profile'} className="flex w-full items-center justify-between gap-2">
-                            <Button variant="ghost">Profile</Button>
+                            <Button className={'flex gap-5'} variant="ghost">Profile  <CiUser color="red"/></Button>
                         </Link>
-                        <CiUser color="red"/>
+                       
                     </Dropdown.Item>
                     <Dropdown.Item id="logout" textValue="Logout" variant="danger">
                         <div className="flex w-full items-center justify-between gap-2">
                             <SignOut />
-                            <ArrowRightFromSquare className="size-3.5 text-danger" />
                         </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>
