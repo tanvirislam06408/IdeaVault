@@ -36,7 +36,7 @@ const features = [
 
 const WhyUs = () => {
     return (
-        <section className="container mx-auto py-20 px-4 dark:text-gray-100">
+        <section className="container mx-auto py-20 px-4 ">
 
             <div className="max-w-4xl mb-16">
                 <p className="text-rose-500 uppercase tracking-[0.2em] font-semibold text-sm mb-4">

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Idea vault - share your ideas",
-  description: "Idea vault",
+  description: "Idea vault"
 };
 
 export default function RootLayout({ children }) {
