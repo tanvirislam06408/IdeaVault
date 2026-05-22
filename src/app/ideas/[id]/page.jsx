@@ -279,11 +279,15 @@ const IdeaDetailsPage = () => {
                             </Form>
                         </div>
                     </div>
-
+                    <div className='md:hidden'>
+                         <CommentSection commentData={commentData} refetchComments={getComments} />
+                    </div>
                     <SideGuide />
                 </div>
 
-                <CommentSection commentData={commentData} refetchComments={getComments} />
+                <div className='hidden md:flex'>
+                    <CommentSection commentData={commentData} refetchComments={getComments} />
+                </div>
             </div>
         </section>
     )
